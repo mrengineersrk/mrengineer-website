@@ -106,7 +106,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* HERO */
+/* ================= HERO ================= */
 /* ===== HERO SLIDER BASE ===== */
 .hero-slider {
   position: relative;
@@ -116,40 +116,112 @@ body {
   color: #fff;
 }
 
-/* DARK START */
-.dark-overlay {
+/* ================= DARK START ================= */
+.intro-dark {
   position: absolute;
   inset: 0;
-  background: rgba(15, 53, 84, 0.75);
-  z-index: 3;
-  animation: lightsFixed 2.5s ease forwards;
-  animation-delay: 2s;
+  background: #000;
+  z-index: 10;
+  animation: darkFade 2.2s ease forwards;
+  animation-delay: 1.8s;
 }
 
-/* TUBE LIGHTS */
-.tube-light {
+/* ================= LIGHT CONTROLS ================= */
+.light-control {
   position: absolute;
   top: 50%;
-  width: 12px;
-  height: 240px;
-  background: #ffffff;
-  border-radius: 10px;
   transform: translateY(-50%);
-  opacity: 0.4;
-  box-shadow: 0 0 8px rgba(255,255,255,0.2);
-  z-index: 4;
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.light-control.left { left: 30px; }
+.light-control.right { right: 30px; }
+
+/* ================= 3D GEAR BUTTON ================= */
+.gear-button {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 30%, #f5f7fa, #9aa0a6 45%, #5f6670 75%);
+
+  box-shadow:
+    inset 0 3px 8px rgba(255,255,255,0.45),
+    inset 0 -4px 10px rgba(0,0,0,0.6),
+    0 10px 18px rgba(0,0,0,0.8);
+
+  position: relative;
+}
+
+/* Gear teeth illusion */
+.gear-button::before {
+  content: "⚙";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  color: #4FA3E3;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+}
+
+/* ================= 3D TUBE LIGHT ================= */
+.tube-light {
+  width: 14px;
+  height: 260px;
+  border-radius: 10px;
+
+  background: linear-gradient(
+    180deg,
+    #fdfefe,
+    #dfe7ec 45%,
+    #ffffff
+  );
+
+  opacity: 0.25;
+
+  box-shadow:
+    0 0 6px rgba(255,255,255,0.25),
+    inset 0 0 10px rgba(255,255,255,0.35);
+
   cursor: pointer;
+
   animation: lightBright 2.5s ease forwards;
   animation-delay: 2s;
 }
 
-.tube-light.left { left: 20px; }
-.tube-light.right { right: 20px; }
+/* ================= CURTAIN REVEAL ================= */
+.curtain {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: #000;
+  z-index: 5;
+}
 
-/* SLIDES */
+.curtain.left {
+  left: 0;
+  animation: curtainLeft 2.5s ease forwards;
+  animation-delay: 2s;
+}
+
+.curtain.right {
+  right: 0;
+  animation: curtainRight 2.5s ease forwards;
+  animation-delay: 2s;
+}
+
+/* ================= SLIDES ================= */
 .slides {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   height: 100%;
   display: flex;
   align-items: center;
@@ -162,21 +234,22 @@ body {
   opacity: 1;
 }
 
-/* INDIVIDUAL SLIDES */
+/* ================= INDIVIDUAL SLIDES ================= */
 .slide {
   position: absolute;
   inset: 0;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
   text-align: center;
   padding: 20px;
 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-blend-mode: overlay;
 
   opacity: 0;
   transition: opacity 0.8s ease;
@@ -198,21 +271,19 @@ body {
   z-index: -1;
 }
 
-/* HERO BACKGROUND IMAGES */
+/* ================= HERO BACKGROUND IMAGES ================= */
 .slides .slide:nth-child(1) { background-image: url("../image/home/hero1.png"); }
 .slides .slide:nth-child(2) { background-image: url("../image/home/hero2.png"); }
 .slides .slide:nth-child(3) { background-image: url("../image/home/hero3.png"); }
 .slides .slide:nth-child(4) { background-image: url("../image/home/hero4.png"); }
 
-/* ===== TEXT PUNCH EFFECT ===== */
+/* ================= TEXT PUNCH EFFECT ================= */
 .slide h1,
 .slide p {
   opacity: 0;
   transform: scale(0.85) translateY(20px);
-  animation: none;
 }
 
-/* Trigger text animation only on active slide */
 .slide.active h1 {
   animation: punchText 0.9s ease forwards;
   animation-delay: 0.4s;
@@ -223,7 +294,7 @@ body {
   animation-delay: 0.6s;
 }
 
-/* ===== HERO TEXT COLOR (MATCH LOGO – METALLIC SILVER) ===== */
+/* ================= METALLIC LOGO TEXT ================= */
 .slide h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 48px;
@@ -232,55 +303,52 @@ body {
 
   background: linear-gradient(
     180deg,
-    #f5f7fa 0%,
-    #cfd4da 30%,
-    #9aa0a6 55%,
-    #e6e9ed 80%,
-    #ffffff 100%
+    #f5f7fa,
+    #cfd4da,
+    #9aa0a6,
+    #e6e9ed,
+    #ffffff
   );
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 
   text-shadow:
-    0 2px 4px rgba(0,0,0,0.6),
-    0 6px 14px rgba(0,0,0,0.5),
-    0 12px 28px rgba(0,0,0,0.4);
+    0 3px 6px rgba(0,0,0,0.7),
+    0 10px 24px rgba(0,0,0,0.6);
 }
 
 .slide p {
   font-size: 18px;
   font-weight: 500;
   color: #e0e3e7;
-
-  text-shadow:
-    0 2px 4px rgba(0,0,0,0.6),
-    0 4px 10px rgba(0,0,0,0.45);
+  text-shadow: 0 3px 8px rgba(0,0,0,0.55);
 }
 
-/* ANIMATIONS */
+/* ================= ANIMATIONS ================= */
 @keyframes punchText {
-  from {
-    opacity: 0;
-    transform: scale(0.85) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-  }
+  from { opacity: 0; transform: scale(0.85) translateY(20px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
 }
 
 @keyframes lightBright {
-  from { opacity: 0.4; box-shadow: 0 0 8px rgba(255,255,255,0.2); }
+  from { opacity: 0.25; box-shadow: 0 0 6px rgba(255,255,255,0.25); }
   to   { opacity: 1; box-shadow: 0 0 60px rgba(255,255,255,0.9); }
 }
 
-@keyframes lightsFixed {
-  from { opacity: 1; }
-  to   { opacity: 0; visibility: hidden; }
+@keyframes darkFade {
+  to { opacity: 0; visibility: hidden; }
 }
 
-/* MOBILE */
+@keyframes curtainLeft {
+  to { transform: translateX(-100%); }
+}
+
+@keyframes curtainRight {
+  to { transform: translateX(100%); }
+}
+
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .tube-light { height: 170px; }
   .slide h1 { font-size: 30px; }
