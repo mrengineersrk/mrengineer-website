@@ -62,7 +62,7 @@ body {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.9);
-  z-index: 2;
+  z-index: 3; /* ABOVE text */
   animation: lightsFixed 2.5s ease forwards;
   animation-delay: 2s; /* engineer fixing time */
 }
@@ -76,9 +76,9 @@ body {
   background: #ffffff;
   border-radius: 10px;
   transform: translateY(-50%);
-  opacity: 0.4;              /* dim at start */
+  opacity: 0.4; /* dim at start */
   box-shadow: 0 0 8px rgba(255,255,255,0.2);
-  z-index: 4;
+  z-index: 4; /* TOP */
   cursor: pointer;
   animation: lightBright 2.5s ease forwards;
   animation-delay: 2s;
@@ -93,16 +93,26 @@ body {
   right: 20px;
 }
 
-/* SLIDES */
+/* SLIDES (TEXT CONTAINER) */
 .slides {
   position: relative;
-  z-index: 3;
+  z-index: 2; /* BELOW overlay */
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  /* IMPORTANT: HIDDEN AT START */
+  opacity: 0;
+  transition: opacity 1.2s ease;
 }
 
+/* SHOW TEXT ONLY AFTER LIGHT FIX */
+.hero-slider.show-content .slides {
+  opacity: 1;
+}
+
+/* INDIVIDUAL SLIDES */
 .slide {
   position: absolute;
   opacity: 0;
@@ -128,7 +138,9 @@ body {
 }
 
 @keyframes lightsFixed {
-  from { opacity: 1; }
+  from {
+    opacity: 1;
+  }
   to {
     opacity: 0;
     visibility: hidden;
@@ -141,7 +153,6 @@ body {
     height: 170px;
   }
 }
-
 
 /* BUTTONS */
 .btn {
