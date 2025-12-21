@@ -52,19 +52,19 @@ body {
 .hero-slider {
   position: relative;
   height: 90vh;
-  background: linear-gradient(to right, #1F6FB2, #4FA3E3);
+  background: #0f3554; /* solid dark blue base */
   overflow: hidden;
   color: #fff;
 }
 
-/* DARK START */
+/* DARK START (BLUE TINT, NOT BLACK) */
 .dark-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.9);
-  z-index: 3; /* ABOVE text */
+  background: rgba(15, 53, 84, 0.75); /* dark blue tint */
+  z-index: 3;
   animation: lightsFixed 2.5s ease forwards;
-  animation-delay: 2s; /* engineer fixing time */
+  animation-delay: 2s;
 }
 
 /* TUBE LIGHTS */
@@ -76,9 +76,9 @@ body {
   background: #ffffff;
   border-radius: 10px;
   transform: translateY(-50%);
-  opacity: 0.4; /* dim at start */
+  opacity: 0.4;
   box-shadow: 0 0 8px rgba(255,255,255,0.2);
-  z-index: 4; /* TOP */
+  z-index: 4;
   cursor: pointer;
   animation: lightBright 2.5s ease forwards;
   animation-delay: 2s;
@@ -96,18 +96,17 @@ body {
 /* SLIDES (TEXT CONTAINER) */
 .slides {
   position: relative;
-  z-index: 2; /* BELOW overlay */
+  z-index: 2;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
-  /* IMPORTANT: HIDDEN AT START */
-  opacity: 0;
+  opacity: 0; /* hidden at start */
   transition: opacity 1.2s ease;
 }
 
-/* SHOW TEXT ONLY AFTER LIGHT FIX */
+/* SHOW TEXT AFTER LIGHT FIX */
 .hero-slider.show-content .slides {
   opacity: 1;
 }
@@ -122,24 +121,28 @@ body {
   align-items: center;
   justify-content: center;
 
-  opacity: 0;
   text-align: center;
-  max-width: 100%;
   padding: 20px;
 
+  opacity: 0;
+  transition: opacity 0.6s ease;
+
+  /* IMAGE SETTINGS */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  transition: opacity 0.6s ease;
+  background-blend-mode: overlay;
 }
 
-/* DARK LAYER OVER IMAGE (FOR TEXT READABILITY) */
+/* DARK BLUE IMAGE TINT (NOT BLACK) */
 .slide::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: linear-gradient(
+    rgba(15, 53, 84, 0.55),
+    rgba(15, 53, 84, 0.55)
+  );
   z-index: -1;
 }
 
@@ -147,21 +150,21 @@ body {
   opacity: 1;
 }
 
-/* ===== HERO BACKGROUND IMAGES (YOUR GITHUB PATH) ===== */
+/* ===== HERO BACKGROUND IMAGES (CSS IS IN /css/) ===== */
 .slides .slide:nth-child(1) {
-  background-image: url("image/home/hero1.png");
+  background-image: url("../image/home/hero1.png");
 }
 
 .slides .slide:nth-child(2) {
-  background-image: url("image/home/hero2.png");
+  background-image: url("../image/home/hero2.png");
 }
 
 .slides .slide:nth-child(3) {
-  background-image: url("image/home/hero3.png");
+  background-image: url("../image/home/hero3.png");
 }
 
 .slides .slide:nth-child(4) {
-  background-image: url("image/home/hero4.png");
+  background-image: url("../image/home/hero4.png");
 }
 
 /* ANIMATIONS */
@@ -177,9 +180,7 @@ body {
 }
 
 @keyframes lightsFixed {
-  from {
-    opacity: 1;
-  }
+  from { opacity: 1; }
   to {
     opacity: 0;
     visibility: hidden;
@@ -192,47 +193,6 @@ body {
     height: 170px;
   }
 }
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  padding: 12px 26px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  margin: 8px;
-}
-
-.primary {
-  background: #FFFFFF;
-  color: #1F6FB2;
-}
-
-.outline {
-  border: 2px solid #FFFFFF;
-  color: #FFFFFF;
-}
-
-/* SECTIONS */
-.section {
-  padding: 70px 0;
-}
-
-.light {
-  background: #F4F6F8;
-}
-
-.dark {
-  background: #1F6FB2;
-  color: #FFFFFF;
-}
-
-.section h2 {
-  font-family: 'Poppins', sans-serif;
-  margin-bottom: 25px;
-  text-align: center;
-}
-
 
 /* SERVICES */
 .services-grid {
