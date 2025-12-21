@@ -70,6 +70,79 @@ body {
   max-width: 800px;
   margin: 20px auto;
 }
+/* ===== BROKEN HERO EFFECT ===== */
+
+.broken-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* cracks */
+.crack {
+  position: absolute;
+  background: rgba(0,0,0,0.15);
+  animation: crackFix 2.5s ease forwards;
+}
+
+.crack-1 {
+  width: 120%;
+  height: 12px;
+  top: 35%;
+  left: -10%;
+}
+
+.crack-2 {
+  width: 12px;
+  height: 120%;
+  left: 40%;
+  top: -10%;
+}
+
+.crack-3 {
+  width: 100%;
+  height: 8px;
+  top: 55%;
+}
+
+/* engineer */
+.engineer {
+  position: absolute;
+  font-size: 42px;
+  left: -60px;
+  bottom: 40px;
+  animation: engineerMove 2.5s ease forwards;
+}
+
+/* animations */
+@keyframes engineerMove {
+  0% {
+    left: -60px;
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  100% {
+    left: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes crackFix {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 /* BUTTONS */
 .btn {
