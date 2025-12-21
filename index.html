@@ -29,15 +29,34 @@
 <!-- ================= HERO ================= -->
 <section class="hero hero-slider">
 
-  <!-- Dark overlay -->
-  <div class="dark-overlay"></div>
+  <!-- DARK START SCREEN -->
+  <div class="intro-dark"></div>
 
-  <!-- Vertical Tube Lights (Controls) -->
-  <div class="tube-light left" onclick="prevSlide()"></div>
-  <div class="tube-light right" onclick="nextSlide()"></div>
+  <!-- LEFT LIGHT + GEAR CONTROL -->
+  <div class="light-control left">
+    <!-- 3D Gear Button -->
+    <div class="gear-button"></div>
 
-  <!-- Slides -->
+    <!-- Vertical Tube Light -->
+    <div class="tube-light" onclick="prevSlide()"></div>
+  </div>
+
+  <!-- RIGHT LIGHT + GEAR CONTROL -->
+  <div class="light-control right">
+    <!-- 3D Gear Button -->
+    <div class="gear-button"></div>
+
+    <!-- Vertical Tube Light -->
+    <div class="tube-light" onclick="nextSlide()"></div>
+  </div>
+
+  <!-- CURTAIN EFFECT (IMAGE REVEAL) -->
+  <div class="curtain left"></div>
+  <div class="curtain right"></div>
+
+  <!-- SLIDES -->
   <div class="slides container">
+
     <div class="slide active">
       <h1>Smart Engineering. Reliable Solutions.</h1>
       <p>Complete Engineering Services for Industrial & Commercial Needs</p>
@@ -57,9 +76,11 @@
       <h1>Your One Engineering Partner</h1>
       <p>We work as your extended engineering team.</p>
     </div>
+
   </div>
 
 </section>
+
 
 <!-- ================= WHAT WE DO ================= -->
 <section class="section light">
