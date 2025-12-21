@@ -61,7 +61,7 @@ body {
 .dark-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 53, 84, 0.75); /* dark blue tint */
+  background: rgba(15, 53, 84, 0.75);
   z-index: 3;
   animation: lightsFixed 2.5s ease forwards;
   animation-delay: 2s;
@@ -127,14 +127,13 @@ body {
   opacity: 0;
   transition: opacity 0.6s ease;
 
-  /* IMAGE SETTINGS */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-blend-mode: overlay;
 }
 
-/* DARK BLUE IMAGE TINT (NOT BLACK) */
+/* DARK BLUE IMAGE TINT */
 .slide::before {
   content: "";
   position: absolute;
@@ -150,7 +149,7 @@ body {
   opacity: 1;
 }
 
-/* ===== HERO BACKGROUND IMAGES (CSS IS IN /css/) ===== */
+/* ===== HERO BACKGROUND IMAGES ===== */
 .slides .slide:nth-child(1) {
   background-image: url("../image/home/hero1.png");
 }
@@ -165,6 +164,37 @@ body {
 
 .slides .slide:nth-child(4) {
   background-image: url("../image/home/hero4.png");
+}
+
+/* ===== HERO TEXT – 3D & HIGH VISIBILITY ===== */
+.slide h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+
+  /* 3D depth */
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.85),
+    0 6px 12px rgba(0,0,0,0.75),
+    0 12px 24px rgba(0,0,0,0.65);
+}
+
+.slide p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #eaf3ff;
+
+  text-shadow:
+    0 2px 4px rgba(0,0,0,0.75),
+    0 4px 8px rgba(0,0,0,0.65);
+}
+
+/* OPTIONAL TEXT BACKPLATE (SUBTLE GLASS EFFECT) */
+.slide > * {
+  position: relative;
+  z-index: 2;
 }
 
 /* ANIMATIONS */
@@ -191,6 +221,14 @@ body {
 @media (max-width: 768px) {
   .tube-light {
     height: 170px;
+  }
+
+  .slide h1 {
+    font-size: 30px;
+  }
+
+  .slide p {
+    font-size: 16px;
   }
 }
 
