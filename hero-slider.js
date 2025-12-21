@@ -4,35 +4,35 @@ const hero = document.querySelector(".hero-slider");
 
 let autoSlideInterval = null;
 
-/* Show specific slide */
+/* ================= SHOW SLIDE ================= */
 function showSlide(index) {
   slides.forEach(slide => slide.classList.remove("active"));
   slides[index].classList.add("active");
 }
 
-/* Next slide (manual + auto) */
+/* ================= NEXT SLIDE ================= */
 function nextSlide() {
   current = (current + 1) % slides.length;
   showSlide(current);
   resetAutoSlide();
 }
 
-/* Previous slide (manual) */
+/* ================= PREVIOUS SLIDE ================= */
 function prevSlide() {
   current = (current - 1 + slides.length) % slides.length;
   showSlide(current);
   resetAutoSlide();
 }
 
-/* Start automatic slideshow */
+/* ================= AUTO SLIDE ================= */
 function startAutoSlide() {
   autoSlideInterval = setInterval(() => {
     current = (current + 1) % slides.length;
     showSlide(current);
-  }, 4500); // slide change interval
+  }, 4500); // slide interval
 }
 
-/* Reset auto slide when user interacts */
+/* ================= RESET AUTO SLIDE ================= */
 function resetAutoSlide() {
   if (autoSlideInterval) {
     clearInterval(autoSlideInterval);
@@ -40,16 +40,21 @@ function resetAutoSlide() {
   startAutoSlide();
 }
 
-/* Page load control */
+/* ================= PAGE LOAD CONTROL ================= */
 window.addEventListener("load", () => {
-  // Show first slide (image visible, text hidden by CSS)
+
+  /* 1️⃣ Show first slide image (text hidden by CSS) */
   showSlide(current);
 
-  // AFTER light fix → show content
+  /* 2️⃣ Wait for dark → lights → curtain animation */
   setTimeout(() => {
+
+    /* Show text + punch animation */
     hero.classList.add("show-content");
 
-    // Start automatic slideshow AFTER intro
+    /* Start automatic slideshow AFTER intro */
     startAutoSlide();
-  }, 2500); // matches dark-overlay animation + punch timing
+
+  }, 3600); // MUST match curtain open animation
+
 });
