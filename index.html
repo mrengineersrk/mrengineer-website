@@ -29,33 +29,41 @@
 <!-- ================= HERO ================= -->
 <section class="hero hero-slider">
 
-  <!-- DARK START SCREEN -->
+  <!-- DARK INTRO SCREEN -->
   <div class="intro-dark"></div>
 
-  <!-- LEFT LIGHT + GEAR CONTROL -->
-  <div class="light-control left">
-    <!-- 3D Gear Button -->
-    <div class="gear-button"></div>
-
-    <!-- Vertical Tube Light -->
-    <div class="tube-light" onclick="prevSlide()"></div>
-  </div>
-
-  <!-- RIGHT LIGHT + GEAR CONTROL -->
-  <div class="light-control right">
-    <!-- 3D Gear Button -->
-    <div class="gear-button"></div>
-
-    <!-- Vertical Tube Light -->
-    <div class="tube-light" onclick="nextSlide()"></div>
-  </div>
-
-  <!-- CURTAIN EFFECT (IMAGE REVEAL) -->
+  <!-- CURTAIN REVEAL -->
   <div class="curtain left"></div>
   <div class="curtain right"></div>
 
-  <!-- SLIDES -->
-  <div class="slides container">
+  <!-- LEFT CONTROL -->
+  <div class="light-control left">
+
+    <!-- INDUSTRIAL 3D BUTTON -->
+    <div class="industrial-button" onclick="prevSlide()">
+      <span class="btn-core"></span>
+    </div>
+
+    <!-- VERTICAL TUBE LIGHT -->
+    <div class="tube-light"></div>
+
+  </div>
+
+  <!-- RIGHT CONTROL -->
+  <div class="light-control right">
+
+    <!-- INDUSTRIAL 3D BUTTON -->
+    <div class="industrial-button" onclick="nextSlide()">
+      <span class="btn-core"></span>
+    </div>
+
+    <!-- VERTICAL TUBE LIGHT -->
+    <div class="tube-light"></div>
+
+  </div>
+
+  <!-- SLIDES (FULL SCREEN) -->
+  <div class="slides">
 
     <div class="slide active">
       <h1>Smart Engineering. Reliable Solutions.</h1>
