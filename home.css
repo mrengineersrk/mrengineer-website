@@ -19,30 +19,16 @@ body {
 
 /* ================= HEADER ================= */
 .header {
-    background: #0b1c2d;
-    padding: 15px 0;
-}
-
-.header-flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background: linear-gradient(90deg, #071827, #0b1c2d);
+    padding: 12px 0;
 }
 
 .logo img {
-    height: 50px;
+    height: 55px;          /* increase size */
+    width: auto;
+    filter: brightness(1.4) contrast(1.2);
 }
 
-.nav a {
-    color: #fff;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.nav a:hover {
-    color: #f4b400;
-}
 
 /* ================= HERO ================= */
 .hero {
