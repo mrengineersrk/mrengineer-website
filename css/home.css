@@ -115,14 +115,53 @@ body {
 /* INDIVIDUAL SLIDES */
 .slide {
   position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   opacity: 0;
   text-align: center;
-  max-width: 800px;
+  max-width: 100%;
+  padding: 20px;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
   transition: opacity 0.6s ease;
+}
+
+/* DARK LAYER OVER IMAGE (FOR TEXT READABILITY) */
+.slide::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: -1;
 }
 
 .slide.active {
   opacity: 1;
+}
+
+/* ===== HERO BACKGROUND IMAGES (YOUR GITHUB PATH) ===== */
+.slides .slide:nth-child(1) {
+  background-image: url("image/home/hero1.png");
+}
+
+.slides .slide:nth-child(2) {
+  background-image: url("image/home/hero2.png");
+}
+
+.slides .slide:nth-child(3) {
+  background-image: url("image/home/hero3.png");
+}
+
+.slides .slide:nth-child(4) {
+  background-image: url("image/home/hero4.png");
 }
 
 /* ANIMATIONS */
@@ -193,6 +232,7 @@ body {
   margin-bottom: 25px;
   text-align: center;
 }
+
 
 /* SERVICES */
 .services-grid {
