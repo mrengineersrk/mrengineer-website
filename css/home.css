@@ -111,6 +111,7 @@ body {
 .hero-slider {
   position: relative;
   height: 90vh;
+  width: 100%;
   background: #0f3554;
   overflow: hidden;
   color: #fff;
@@ -142,33 +143,49 @@ body {
 .light-control.left { left: 30px; }
 .light-control.right { right: 30px; }
 
-/* ================= 3D GEAR BUTTON ================= */
-.gear-button {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
+/* ================= INDUSTRIAL 3D BUTTON ================= */
+.industrial-button {
+  width: 56px;
+  height: 36px;
+  border-radius: 6px;
 
-  background:
-    radial-gradient(circle at 30% 30%, #f5f7fa, #9aa0a6 45%, #5f6670 75%);
+  background: linear-gradient(
+    180deg,
+    #e6ebf0,
+    #a9b1ba 45%,
+    #6b727a
+  );
 
   box-shadow:
-    inset 0 3px 8px rgba(255,255,255,0.45),
-    inset 0 -4px 10px rgba(0,0,0,0.6),
-    0 10px 18px rgba(0,0,0,0.8);
+    inset 0 2px 3px rgba(255,255,255,0.6),
+    inset 0 -3px 6px rgba(0,0,0,0.6),
+    0 6px 14px rgba(0,0,0,0.8);
 
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-/* Gear teeth illusion */
-.gear-button::before {
-  content: "⚙";
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  font-size: 28px;
-  color: #4FA3E3;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6));
+.industrial-button .btn-core {
+  width: 34px;
+  height: 16px;
+  border-radius: 4px;
+
+  background: linear-gradient(
+    180deg,
+    #4FA3E3,
+    #1F6FB2
+  );
+
+  box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.5),
+    inset 0 -2px 4px rgba(0,0,0,0.6),
+    0 0 10px rgba(79,163,227,0.9);
+}
+
+.industrial-button:active {
+  transform: translateY(2px);
 }
 
 /* ================= 3D TUBE LIGHT ================= */
@@ -179,7 +196,7 @@ body {
 
   background: linear-gradient(
     180deg,
-    #fdfefe,
+    #ffffff,
     #dfe7ec 45%,
     #ffffff
   );
@@ -187,11 +204,11 @@ body {
   opacity: 0.25;
 
   box-shadow:
-    0 0 6px rgba(255,255,255,0.25),
+    0 0 12px rgba(255,255,255,0.6),
+    0 0 40px rgba(255,255,255,0.9),
     inset 0 0 10px rgba(255,255,255,0.35);
 
   cursor: pointer;
-
   animation: lightBright 2.5s ease forwards;
   animation-delay: 2s;
 }
@@ -222,10 +239,13 @@ body {
 .slides {
   position: relative;
   z-index: 3;
+  width: 100%;
   height: 100%;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   opacity: 0;
   transition: opacity 1.2s ease;
 }
@@ -238,6 +258,8 @@ body {
 .slide {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
 
   display: flex;
   flex-direction: column;
@@ -354,6 +376,7 @@ body {
   .slide h1 { font-size: 30px; }
   .slide p { font-size: 16px; }
 }
+
 /* ================= WHAT WE DO SECTION ================= */
 .section.light {
   background: #ffffff;
@@ -389,71 +412,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 28px;
 }
-
-/* ================= SERVICE CARD ================= */
-.service-card {
-  background: #ffffff;
-  border-radius: 12px;
-  padding: 28px;
-
-  box-shadow:
-    0 8px 20px rgba(0, 0, 0, 0.06),
-    0 2px 6px rgba(0, 0, 0, 0.04);
-
-  transition: all 0.35s ease;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 14px 30px rgba(0, 0, 0, 0.12),
-    0 4px 10px rgba(0, 0, 0, 0.06);
-}
-
-/* ================= CARD TITLES ================= */
-.service-card h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  color: #111827;
-  margin-bottom: 12px;
-}
-
-/* ================= CARD TEXT ================= */
-.service-card p {
-  font-size: 15px;
-  color: #4b5563;
-  line-height: 1.6;
-}
-
-/* ================= VIEW ALL SERVICES LINK ================= */
-.center {
-  text-align: left;
-  margin-top: 18px;
-}
-
-.center a {
-  font-size: 15px;
-  font-weight: 500;
-  color: #1F6FB2;
-  text-decoration: none;
-}
-
-.center a:hover {
-  text-decoration: underline;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-  .section.light h2 {
-    font-size: 26px;
-  }
-
-  .service-card {
-    padding: 22px;
-  }
-}
-
 /* SERVICES */
 .services-grid {
   display: grid;
