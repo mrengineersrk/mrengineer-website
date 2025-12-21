@@ -15,7 +15,6 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-
 /* ================= HEADER (WHITE BASE) ================= */
 .header {
   background: #ffffff;
@@ -25,53 +24,51 @@ body {
   z-index: 1000;
 }
 
-/* ================= 3D HEADER BOX ================= */
+/* ================= ENGINEERING PLATE ================= */
 .header-flex {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 20px;
+  padding: 12px 24px;
   margin: 10px auto;
 
-  background: linear-gradient(
-    180deg,
-    #0b1f33 0%,
-    #102e4a 100%
-  );
+  background: #ffffff;
+  border-radius: 14px;
 
-  border-radius: 16px;
-
-  /* 3D / raised effect */
+  /* Steel plate depth */
   box-shadow:
-    0 10px 25px rgba(0,0,0,0.18),
-    inset 0 1px 0 rgba(255,255,255,0.15);
+    0 6px 18px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.9);
 
   position: relative;
-  overflow: hidden;
 }
 
-/* Soft energy glow inside box */
-.header-flex::before {
-  content: "";
+/* ================= GEAR CORNERS ================= */
+.header-flex::before,
+.header-flex::after {
+  content: "⚙";
   position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 20% 50%, rgba(79,163,227,0.18), transparent 45%),
-    radial-gradient(circle at 80% 50%, rgba(79,163,227,0.18), transparent 45%);
-  z-index: 0;
+  font-size: 18px;
+  color: #1F6FB2;
+  opacity: 0.8;
 }
 
-/* Keep content above glow */
-.header-flex > * {
-  position: relative;
-  z-index: 2;
+/* Left gear corner */
+.header-flex::before {
+  top: -8px;
+  left: -8px;
+}
+
+/* Right gear corner */
+.header-flex::after {
+  bottom: -8px;
+  right: -8px;
 }
 
 /* ================= LOGO ================= */
 .logo {
   height: 55px;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
 }
 
 /* ================= NAVIGATION ================= */
@@ -84,50 +81,29 @@ body {
   font-weight: 600;
   letter-spacing: 0.4px;
 
-  color: #e6f2ff;
+  color: #1F6FB2;
+  background: #ffffff;
 
-  border-radius: 24px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(79,163,227,0.25);
+  border-radius: 22px;
+  border: 1px solid #dbe5f0;
 
   box-shadow:
-    inset 0 0 10px rgba(79,163,227,0.25),
-    0 0 0 rgba(79,163,227,0);
+    inset 0 0 0 rgba(0,0,0,0),
+    0 3px 6px rgba(0,0,0,0.08);
 
-  transition: all 0.35s ease;
+  transition: all 0.3s ease;
 }
 
-/* Hover glow */
+/* Hover – subtle engineering feel */
 .nav a:hover {
-  color: #ffffff;
-
-  background: linear-gradient(
-    180deg,
-    rgba(79,163,227,0.45),
-    rgba(31,111,178,0.45)
-  );
+  background: #f4f8fc;
+  border-color: #1F6FB2;
+  color: #1F6FB2;
 
   box-shadow:
-    0 0 14px rgba(79,163,227,0.85),
-    inset 0 0 10px rgba(255,255,255,0.25);
+    0 4px 10px rgba(31,111,178,0.25);
 
   transform: translateY(-1px);
-}
-
-/* Gear indicator */
-.nav a::before {
-  content: "⚙";
-  position: absolute;
-  left: -14px;
-  top: 50%;
-  transform: translateY(-50%) scale(0.75);
-  opacity: 0;
-  color: #4FA3E3;
-  transition: 0.3s ease;
-}
-
-.nav a:hover::before {
-  opacity: 1;
 }
 
 /* HERO */
