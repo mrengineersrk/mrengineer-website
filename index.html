@@ -3,191 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mr. Engineer Header</title>
-  <style>
-    /* Reset and basic styles */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', Helvetica, sans-serif;
-    }
-
-    /* Header container */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background-color: #ffffff;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    /* Logo area */
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo img {
-      width: 70px;
-      height: 70px;
-    }
-
-    .logo-text {
-      font-size: 28px;
-      font-weight: bold;
-      color: #1e3a8a; /* Dark blue */
-      letter-spacing: 1px;
-    }
-
-    /* Navigation menu */
-    .nav {
-      display: flex;
-      gap: 35px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      color: #1e3a8a; /* Same dark blue as logo */
-      font-size: 16px;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .nav a:hover {
-      color: #3b82f6; /* Lighter blue on hover */
-    }
-
-    /* Active link style (Home is active) */
-    .nav a.active {
-      color: #3b82f6;
-    }
-
-    .nav a.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: #3b82f6;
-    }
-
-    /* Mobile responsive */
-    @media (max-width: 768px) {
-      .header {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      .nav {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-      }
-
-      .logo-text {
-        font-size: 24px;
-      }
-    }
-  </style>
+  <title>Mr. Engineer - Complete Engineering Solutions</title>
+  <link rel="stylesheet" href="common.css">
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Your Header -->
+  <!-- Header -->
   <header class="header">
     <div class="logo">
-      <img src="https://via.placeholder.com/70/1e3a8a/ffffff?text=Logo" alt="Mr. Engineer Logo">
-      <!-- Replace the src above with your real logo image -->
+      <img src="image/logo.png" alt="Mr. Engineer Logo">
       <span class="logo-text">MR. ENGINEER</span>
     </div>
-
     <nav class="nav">
-      <a href="#" class="active">Home</a>
-      <a href="#">Experience</a>
-      <a href="#">Safety.Vidoo</a>
-      <a href="#">Secnoots</a>
-      <a href="#">Contact us</a>
+      <a href="#home" class="active">Home</a>
+      <a href="#experience">Experience</a>
+      <a href="#safety">Safety.Vidoo</a>
+      <a href="#sections">Secnoots</a>
+      <a href="#contact">Contact us</a>
     </nav>
   </header>
-  </main>
 
-</body>
-</html>
-  <main>
-    <section class="hero">
-      <div class="slide" style="background-image: url('images/home/hero1.png');"></div>
-      <div class="slide" style="background-image: url('images/home/hero2.png');"></div>
-      <div class="slide" style="background-image: url('images/home/hero3.png');"></div>
-      <div class="slide" style="background-image: url('images/home/hero4.png');"></div>
-      <div class="hero-content">
-        <h1>Complete Engineering Solutions for Industrial & Commercial Needs</h1>
-        <p>From plant setup and machinery installation to maintenance and troubleshooting — we deliver end-to-end engineering services with precision and reliability.</p>
-        <a href="contact.html" class="btn">Get a Quote</a>
-        <a href="contact.html" class="btn">Contact Us</a>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Complete Engineering Solutions<br>for Industrial & Commercial Needs</h1>
+      <p>From plant setup and machinery installation to maintenance and troubleshooting — we deliver end-to-end engineering services with precision and reliability.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn-primary">Get a Quote</a>
+        <a href="#contact" class="btn-secondary">Contact Us</a>
       </div>
-    </section>
-    <section class="section about-intro">
-      <h2>About Mr. Engineer (Short Intro Section – 3-column layout with text and icon)</h2>
-      <div class="grid">
-        <p>Mr. Engineer is a one-stop engineering solution provider delivering reliable, efficient, and cost-effective services for industrial and commercial projects.</p>
-        <p>We bridge the gap between skilled engineers, technicians, and industries by offering complete project handling under one roof.</p>
-        <p>With a strong technical foundation and hands-on industry experience, we ensure every project is executed with accuracy, safety, and quality.</p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about">
+    <div class="container">
+      <h2>About Mr. Engineer</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Mr. Engineer is a one-stop engineering solution provider delivering reliable, efficient, and cost-effective services for industrial and commercial projects.</p>
+          <p>We bridge the gap between skilled engineers, technicians, and industries by offering complete project handling under one roof.</p>
+          <p>With a strong technical foundation and hands-on industry experience, we ensure every project is executed with accuracy, safety, and quality.</p>
+        </div>
+        <div class="about-image">
+          <img src="https://www.shutterstock.com/image-photo/diverse-industrial-team-smiling-giving-260nw-2639225031.jpg" alt="Professional Engineering Team">
+        </div>
       </div>
-      <img src="images/home/about-intro.png" alt="Industrial engineers team">
-    </section>
-    <section class="section core-services">
-      <h2>Our Core Services (Grid of 5 cards, each with icon, title, bullet points, and illustrative image)</h2>
-      <div class="grid">
-        <div class="card">
-          <img src="images/home/service-plant.png" alt="Industrial & Plant Engineering">
-          <h3>🏠 Industrial & Plant Engineering</h3>
+    </div>
+  </section>
+
+  <!-- Core Services -->
+  <section class="services">
+    <div class="container">
+      <h2>Our Core Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <img src="https://www.visualcomponents.com/wordpress/wp-content/uploads/2024/06/Picture-79.jpg" alt="Industrial & Plant Engineering">
+          <h3>🏭 Industrial & Plant Engineering</h3>
           <ul>
             <li>Plant setup & commissioning</li>
             <li>Equipment installation & alignment</li>
             <li>Production line shifting & modification</li>
           </ul>
         </div>
-        <div class="card">
-          <img src="images/home/service-machinery.png" alt="Machinery Installation & Maintenance">
-          <h3>🏠 Machinery Installation & Maintenance</h3>
+        <div class="service-card">
+          <img src="https://www.sjvc.edu/wp-content/uploads/2025/10/SJVC-blog-industrial-machinery-mechanic-image.jpg" alt="Machinery Installation">
+          <h3>⚙️ Machinery Installation & Maintenance</h3>
           <ul>
             <li>Mechanical installation</li>
             <li>Preventive & breakdown maintenance</li>
             <li>AMC (Annual Maintenance Contracts)</li>
           </ul>
         </div>
-        <div class="card">
-          <img src="images/home/service-piping.png" alt="Piping & Fabrication Works">
-          <h3>Piping & Fabrication Works</h3>
+        <div class="service-card">
+          <img src="https://sawyerfab.com/wp-content/uploads/sites/3/2023/02/IMG_5054.jpg" alt="Piping & Fabrication">
+          <h3>🔩 Piping & Fabrication Works</h3>
           <ul>
             <li>MS / SS piping works</li>
             <li>Chemical & industrial pipeline installation</li>
             <li>Structural fabrication</li>
           </ul>
         </div>
-        <div class="card">
-          <img src="images/home/service-layout.png" alt="Interior & Industrial Layout Solutions">
-          <h3>Interior & Industrial Layout Solutions</h3>
+        <div class="service-card">
+          <img src="https://www.cideon.com/adobe/dynamicmedia/deliver/dm-aid--a125f512-483d-4803-9ddb-9e53b390a0eb/factory-design-suite.jpg?quality=85&preferwebp=true" alt="Interior Layout">
+          <h3>🏗️ Interior & Industrial Layout Solutions</h3>
           <ul>
             <li>Factory layout planning</li>
             <li>Space optimization</li>
             <li>Utility line routing</li>
           </ul>
         </div>
-        <div class="card">
-          <img src="images/home/service-troubleshoot.png" alt="Engineering Troubleshooting & Support">
-          <h3>Engineering Troubleshooting & Support</h3>
+        <div class="service-card">
+          <img src="http://media.noria.com/sites/Uploads/2019/11/19/cd400c49-3293-4608-b3e0-d3af235efe08_ArticleImages_RP31171_1234x694_09032019_extra_large.jpeg" alt="Troubleshooting">
+          <h3>🔧 Engineering Troubleshooting & Support</h3>
           <ul>
             <li>Root cause analysis</li>
             <li>Process improvement solutions</li>
@@ -195,63 +106,87 @@
           </ul>
         </div>
       </div>
-    </section>
-    <section class="section industries">
-      <h2>Industries We Serve (Horizontal scroll or grid with icons/images)</h2>
-      <div class="grid">
-        <p>Chemical & Pharmaceutical Plants</p>
-        <p>Manufacturing Units</p>
-        <p>Warehouses & Industrial Sheds</p>
-        <p>Commercial Buildings</p>
-        <p>Small & Medium Industries (SMEs)</p>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="industries">
+    <div class="container">
+      <h2>Industries We Serve</h2>
+      <div class="industries-grid">
+        <img src="https://www.pharmaceutical-technology.com/wp-content/uploads/sites/24/2017/09/1_rhodia.jpg" alt="Chemical & Pharmaceutical">
+        <img src="https://www.liveabout.com/thmb/bVSnfrmARNiFQ1CFGgCWJtL46zc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/149701279-56a5b64b3df78cf7728982c9.jpg" alt="Manufacturing Units">
+        <img src="https://ironbuiltbuildings.com/wp-content/uploads/2023/03/commercial-warehouse-01.jpg" alt="Warehouses">
+        <img src="https://innodez.com/wp-content/uploads/2025/01/Office_MEP_Structural_Engineering_Florida.jpg" alt="Commercial Buildings">
+        <img src="https://www.shutterstock.com/image-photo/bangalore-india-1st-august-2024-260nw-2498466773.jpg" alt="SMEs">
       </div>
-    </section>
-    <section class="section why-choose">
-      <h2>Why Choose Mr. Engineer? (Bullet list with checkmarks)</h2>
-      <ul>
-        <li>✓ One-Stop Engineering Solution</li>
-        <li>✓ Experienced Engineers & Skilled Technicians</li>
-        <li>✓ Cost-Effective & Transparent Pricing</li>
-        <li>✓ On-Time Project Delivery</li>
-        <li>✓ Safety & Quality Focused</li>
-        <li>✓ Practical, On-Ground Experience</li>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="why-choose">
+    <div class="container">
+      <h2>Why Choose Mr. Engineer?</h2>
+      <ul class="check-list">
+        <li>✔ One-Stop Engineering Solution</li>
+        <li>✔ Experienced Engineers & Skilled Technicians</li>
+        <li>✔ Cost-Effective & Transparent Pricing</li>
+        <li>✔ On-Time Project Delivery</li>
+        <li>✔ Safety & Quality Focused</li>
+        <li>✔ Practical, On-Ground Experience</li>
       </ul>
-    </section>
-    <section class="section how-work">
-      <h2>How We Work (Numbered steps with icons)</h2>
-      <ol>
-        <li>Understand Your Requirement</li>
-        <li>Site Visit & Technical Assessment</li>
-        <li>Solution Planning & Quotation</li>
-        <li>Execution & Project Management</li>
-        <li>Final Handover & Support</li>
-      </ol>
-    </section>
-    <section class="section cta">
-      <h2>Final Call to Action Section</h2>
-      <p>Need reliable engineering support for your project?</p>
+    </div>
+  </section>
+
+  <!-- How We Work -->
+  <section class="how-we-work">
+    <div class="container">
+      <h2>How We Work</h2>
+      <div class="steps-grid">
+        <div class="step">1️⃣ Understand Your Requirement</div>
+        <div class="step">2️⃣ Site Visit & Technical Assessment</div>
+        <div class="step">3️⃣ Solution Planning & Quotation</div>
+        <div class="step">4️⃣ Execution & Project Management</div>
+        <div class="step">5️⃣ Final Handover & Support</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section id="contact" class="final-cta">
+    <div class="container">
+      <h2>Need reliable engineering support for your project?</h2>
       <p>Let Mr. Engineer handle it — professionally and efficiently.</p>
       <p>📞 Call: 9004624958</p>
       <p>📧 Email: mrengineer245@gmail.com</p>
       <p>📍 Location: Bhiwandi, Mumbai – 421311</p>
-      <a href="contact.html" class="btn">Get a Quote</a>
-    </section>
-  </main>
-  <footer class="footer">
-    <p>© 2025 Mr. Engineer</p>
-    <p>Smart Engineering. Reliable Solutions.</p>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="industries.html">Industries We Serve</a></li>
-        <li><a href="why-choose.html">Why Choose Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </nav>
+      <a href="#contact" class="btn-primary large">Get a Quote</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-left">
+        <div class="logo-section">
+          <img src="image/logo.png" alt="Mr. Engineer Logo">
+          <div class="company-name">MR. ENGINEER</div>
+        </div>
+        <div class="tagline">Smart Engineering. Reliable Solutions.</div>
+        <div class="contact-info">
+          <div class="contact-item"><i class="fas fa-phone"></i> <a href="tel:9004624958">9004624958</a></div>
+          <div class="contact-item"><i class="fas fa-envelope"></i> <a href="mailto:mrengineer245@gmail.com">mrengineer245@gmail.com</a></div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i> Bhiwandi, Mumbai - 421311</div>
+        </div>
+      </div>
+      <img src="https://www.mheavytechnology.com/wp-content/uploads/2023/10/hero-slide-4.jpg" alt="Engineers Illustration" class="engineers-img"> <!-- Placeholder - replace with your illustration -->
+    </div>
+    <div class="copyright">
+      © 2025 Mr. Engineer. Smart Engineering. Reliable Solutions.
+    </div>
   </footer>
-  <script src="js/main.js"></script>
-  <script src="js/home.js"></script>
+
+  <script src="main.js"></script>
+  <script src="home.js"></script>
 </body>
 </html>
