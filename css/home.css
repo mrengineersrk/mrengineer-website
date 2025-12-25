@@ -1,29 +1,47 @@
 /* Hero */
-.hero { position: relative; height: 80vh; background: url('https://www.mheavytechnology.com/wp-content/uploads/2023/10/hero-slide-2.jpg') center/cover no-repeat; }
-.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.5); }
-.hero-content { position: relative; max-width: 800px; color: #fff; text-align: center; top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.hero-content h1 { font-size: 48px; margin-bottom: 20px; }
-.hero-content p { font-size: 20px; margin-bottom: 40px; }
+.hero { position: relative; height: 80vh; min-height: 600px; background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://via.placeholder.com/1920x1080?text=Hero+Background'); background-size: cover; background-position: center; display: flex; align-items: center; color: white; }
+.hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.demagcranes.com/sites/default/files/styles/hero/public/media/images/40172-6-b.jpg.webp?itok=WoslXHKW') no-repeat left center/cover, url('https://www.haskell.com/wp-content/uploads/2023/02/insights-e-week-commissioning-agents-header.jpg') no-repeat center center/cover, url('https://www.global.weir/globalassets/service-page-images/services---field-services---commissioning--/hero-image/Multiflo_Mudflo_Indonesia_2020_Person_54.jpg') no-repeat right center/cover; opacity: 0.7; }
+.hero-overlay { position: relative; z-index: 1; text-align: center; max-width: 900px; margin: 0 auto; }
+.hero h1 { font-size: 48px; margin-bottom: 20px; }
+.hero p { font-size: 20px; margin-bottom: 40px; max-width: 800px; margin-left: auto; margin-right: auto; }
 
-/* About */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-.about-image img { width: 100%; border-radius: 10px; }
+/* About Intro */
+.about-intro { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+.about-text { flex: 1; min-width: 300px; }
+.about-img { max-width: 500px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
 /* Services */
+.services { background: #f8f9fa; }
 .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.service-card { background: #f9f9f9; padding: 20px; border-radius: 10px; text-align: center; }
+.service-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); text-align: center; }
 .service-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px; }
-.service-card ul { text-align: left; margin-top: 15px; }
+.service-card h3 { margin: 20px 0; color: #1e3a8a; }
+.service-card ul { list-style: none; text-align: left; }
 
 /* Industries */
-.industries-grid { display: flex; overflow-x: auto; gap: 20px; padding: 20px 0; }
-.industries-grid img { height: 200px; min-width: 300px; object-fit: cover; border-radius: 10px; }
+.industries-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; margin-bottom: 40px; }
+.industries-grid div { background: #e0e7ff; padding: 30px; border-radius: 10px; font-weight: bold; }
+.industries-img { width: 100%; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 
 /* Why Choose & How We Work */
-.check-list { max-width: 800px; margin: 0 auto; font-size: 18px; }
-.check-list li { margin: 15px 0; }
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; text-align: center; font-size: 18px; }
+.why-choose { background: #1e3a8a; color: white; }
+.why-choose .section-title { color: white; }
+.how-we-work .steps { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; }
+.how-we-work .step { text-align: center; flex: 1; min-width: 150px; }
+.how-we-work .step span { display: block; width: 60px; height: 60px; background: #3b82f6; color: white; border-radius: 50%; line-height: 60px; font-size: 24px; margin: 0 auto 20px; font-weight: bold; }
 
 /* Final CTA */
-.final-cta { background: #f0f8ff; padding: 80px 20px; text-align: center; }
+.final-cta { background: #f0f4ff; text-align: center; padding: 100px 0; }
 .final-cta h2 { font-size: 36px; margin-bottom: 20px; }
+.final-cta p { font-size: 18px; margin: 15px 0; }
+
+/* Placeholders - Replace with actual paths */
+about-intro.png → https://media.istockphoto.com/id/1462445665/photo/team-workers-and-workers-are-standing-in-the-factory-group-staff-standing-in-engineering.jpg?s=612x612&w=0&k=20&c=zxBeNGXO3_WBi0r4fo8yc_bUkSBNewJP_Q3WzwTzn8g=
+service-plant.png → https://cdn.prod.website-files.com/652ff8f14b55a603d3fb40f8/6585851f5b6cf2fb0fd9d953_Ambani-Project-Layout-01-scaled.webp
+service-machinery.png → https://storee.com/wp-content/uploads/2016/04/equipment-relocate-16-1.jpg
+service-piping.png → https://www.laxmifabrication.in/assets/images/products/ss-ms-pipeline-work.jpg
+service-layout.png → https://www.vistable.com/wp-content/uploads/3d-layout-planning.webp
+service-troubleshoot.png → https://www.imarcgroup.com/insights/files/4342394f-10e7-4e83-8ef5-b8e7c3714496insights-images---2025-07-28t180939.558_11zon.webp
+industries.png → https://media.istockphoto.com/id/994167852/photo/chemical-manufacturing-industrial-equipment.jpg?s=612x612&w=0&k=20&c=pEVpve8-oX9SRFAYYny5D19mu8S_TZD1P5k8veplnSM=
+engineers-illustration.png → https://www.shutterstock.com/image-vector/construction-engineer-concept-men-uniforms-600nw-2485182487.jpg
+logo.png → https://thumbs.dreamstime.com/b/blue-gear-wrench-symbol-concept-engineering-repair-mechanics-industry-technology-great-logos-web-design-visual-383277325.jpg
