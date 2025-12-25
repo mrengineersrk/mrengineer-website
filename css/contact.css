@@ -1,1 +1,13 @@
+.hero {
+  text-align: center;
+  padding: 20px;
+}
 
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero iframe {
+  max-width: 100%;
+}
