@@ -1,15 +1,2 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const slides = document.querySelectorAll('.slide');
-  if (slides.length > 0) {
-    let current = 0;
-    function showSlide(index) {
-      slides.forEach((slide) => slide.classList.remove('active'));
-      slides[index].classList.add('active');
-    }
-    setInterval(() => {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }, 5000);
-    showSlide(0);
-  }
-});
+// Add any homepage-specific scripts here (e.g., carousel, animations)
+console.log("Home page loaded");
