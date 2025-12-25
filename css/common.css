@@ -23,20 +23,70 @@ section { padding: 80px 0; }
 .nav a.active::after { content: ''; position: absolute; bottom: -8px; left: 0; width: 100%; height: 3px; background: #3b82f6; }
 .mobile-toggle { display: none; font-size: 24px; cursor: pointer; }
 
-/* Footer */
-.footer { background: linear-gradient(to bottom, #1e40af, #1e3a8a); color: white; padding: 60px 0 20px; }
-.footer-content { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 40px; }
+/* ... (Keep all your existing styles above unchanged) */
+
+/* Footer - Updated for transparency + background image */
+.footer {
+  position: relative;
+  background: transparent; /* Remove solid/gradient */
+  color: white;
+  padding: 80px 0 30px;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('../images/footer.png') center center / cover no-repeat;
+  z-index: -2;
+}
+
+.footer::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30, 58, 138, 0.85); /* Dark blue transparent overlay - matches your design */
+  z-index: -1;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* Rest remains same */
 .logo-section { display: flex; align-items: center; gap: 15px; }
 .logo-section img { height: 80px; }
 .company-name { font-size: 32px; font-weight: bold; }
-.tagline { font-size: 18px; margin: 20px 0; opacity: 0.9; }
+.tagline { font-size: 18px; margin: 20px 0; opacity: 0.95; }
 .contact-info { display: flex; flex-direction: column; gap: 15px; }
-.contact-item { display: flex; align-items: center; gap: 12px; }
+.contact-item { display: flex; align-items: center; gap: 12px; font-size: 17px; }
 .contact-item a { color: white; text-decoration: none; }
 .contact-item a:hover { text-decoration: underline; }
+.contact-item svg { width: 20px; height: 20px; flex-shrink: 0; }
 .engineers-img { max-width: 350px; }
-.copyright { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); opacity: 0.8; }
+.copyright {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 25px;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  opacity: 0.9;
+  font-size: 15px;
+}
 
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .footer-content { flex-direction: column; text-align: center; }
+  .engineers-img { order: -1; max-width: 300px; }
+}
 /* Check List */
 .check-list { max-width: 800px; margin: 0 auto; font-size: 18px; }
 .check-list li { margin: 15px 0; padding-left: 40px; position: relative; }
