@@ -1,493 +1,54 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #2E2E2E;
-  background: #FFFFFF;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
-/* ================= HEADER (WHITE BASE) ================= */
-.header {
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-/* ================= ENGINEERING PLATE ================= */
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  padding: 12px 24px;
-  margin: 10px auto;
-
-  background: #ffffff;
-  border-radius: 14px;
-
-  /* Steel plate depth */
-  box-shadow:
-    0 6px 18px rgba(0,0,0,0.15),
-    inset 0 1px 0 rgba(255,255,255,0.9);
-
+.hero {
+  height: calc(100vh - 70px);
   position: relative;
-}
-
-/* ================= GEAR CORNERS ================= */
-.header-flex::before,
-.header-flex::after {
-  content: "⚙";
-  position: absolute;
-  font-size: 18px;
-  color: #1F6FB2;
-  opacity: 0.8;
-}
-
-/* Left gear corner */
-.header-flex::before {
-  top: -8px;
-  left: -8px;
-}
-
-/* Right gear corner */
-.header-flex::after {
-  bottom: -8px;
-  right: -8px;
-}
-
-/* ================= LOGO ================= */
-.logo {
-  height: 55px;
-}
-
-/* ================= NAVIGATION ================= */
-.nav a {
-  position: relative;
-  margin-left: 22px;
-  padding: 8px 18px;
-
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 0.4px;
-
-  color: #1F6FB2;
-  background: #ffffff;
-
-  border-radius: 22px;
-  border: 1px solid #dbe5f0;
-
-  box-shadow:
-    inset 0 0 0 rgba(0,0,0,0),
-    0 3px 6px rgba(0,0,0,0.08);
-
-  transition: all 0.3s ease;
-}
-
-/* Hover – subtle engineering feel */
-.nav a:hover {
-  background: #f4f8fc;
-  border-color: #1F6FB2;
-  color: #1F6FB2;
-
-  box-shadow:
-    0 4px 10px rgba(31,111,178,0.25);
-
-  transform: translateY(-1px);
-}
-
-/* ================= HERO ================= */
-/* ===== HERO SLIDER BASE ===== */
-.hero-slider {
-  position: relative;
-  height: 90vh;
-  width: 100%;
-  background: #0f3554;
   overflow: hidden;
-  color: #fff;
 }
 
-/* ================= DARK START ================= */
-.intro-dark {
-  position: absolute;
-  inset: 0;
-  background: #000;
-  z-index: 10;
-  animation: darkFade 2.2s ease forwards;
-  animation-delay: 1.8s;
-}
-
-/* ================= LIGHT CONTROLS ================= */
-.light-control {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 6;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 18px;
-}
-
-.light-control.left { left: 30px; }
-.light-control.right { right: 30px; }
-
-/* ================= INDUSTRIAL 3D BUTTON ================= */
-.industrial-button {
-  width: 56px;
-  height: 36px;
-  border-radius: 6px;
-
-  background: linear-gradient(
-    180deg,
-    #e6ebf0,
-    #a9b1ba 45%,
-    #6b727a
-  );
-
-  box-shadow:
-    inset 0 2px 3px rgba(255,255,255,0.6),
-    inset 0 -3px 6px rgba(0,0,0,0.6),
-    0 6px 14px rgba(0,0,0,0.8);
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.industrial-button .btn-core {
-  width: 34px;
-  height: 16px;
-  border-radius: 4px;
-
-  background: linear-gradient(
-    180deg,
-    #4FA3E3,
-    #1F6FB2
-  );
-
-  box-shadow:
-    inset 0 1px 2px rgba(255,255,255,0.5),
-    inset 0 -2px 4px rgba(0,0,0,0.6),
-    0 0 10px rgba(79,163,227,0.9);
-}
-
-.industrial-button:active {
-  transform: translateY(2px);
-}
-
-/* ================= 3D TUBE LIGHT ================= */
-.tube-light {
-  width: 14px;
-  height: 260px;
-  border-radius: 10px;
-
-  background: linear-gradient(
-    180deg,
-    #ffffff,
-    #dfe7ec 45%,
-    #ffffff
-  );
-
-  opacity: 0.25;
-
-  box-shadow:
-    0 0 12px rgba(255,255,255,0.6),
-    0 0 40px rgba(255,255,255,0.9),
-    inset 0 0 10px rgba(255,255,255,0.35);
-
-  cursor: pointer;
-  animation: lightBright 2.5s ease forwards;
-  animation-delay: 2s;
-}
-
-/* ================= CURTAIN REVEAL ================= */
-.curtain {
-  position: absolute;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  background: #000;
-  z-index: 5;
-}
-
-.curtain.left {
-  left: 0;
-  animation: curtainLeft 2.5s ease forwards;
-  animation-delay: 2s;
-}
-
-.curtain.right {
-  right: 0;
-  animation: curtainRight 2.5s ease forwards;
-  animation-delay: 2s;
-}
-
-/* ================= SLIDES ================= */
-.slides {
-  position: relative;
-  z-index: 3;
-  width: 100%;
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  opacity: 0;
-  transition: opacity 1.2s ease;
-}
-
-.hero-slider.show-content .slides {
-  opacity: 1;
-}
-
-/* ================= INDIVIDUAL SLIDES ================= */
 .slide {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  text-align: center;
-  padding: 20px;
-
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-
+  transition: opacity 1s ease-in-out;
   opacity: 0;
-  transition: opacity 0.8s ease;
 }
 
 .slide.active {
   opacity: 1;
 }
 
-/* IMAGE TINT */
-.slide::before {
-  content: "";
+.hero-content {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(15, 53, 84, 0.55),
-    rgba(15, 53, 84, 0.55)
-  );
-  z-index: -1;
-}
-
-/* ================= HERO BACKGROUND IMAGES ================= */
-.slides .slide:nth-child(1) { background-image: url("../image/home/hero1.png"); }
-.slides .slide:nth-child(2) { background-image: url("../image/home/hero2.png"); }
-.slides .slide:nth-child(3) { background-image: url("../image/home/hero3.png"); }
-.slides .slide:nth-child(4) { background-image: url("../image/home/hero4.png"); }
-
-/* ================= TEXT PUNCH EFFECT ================= */
-.slide h1,
-.slide p {
-  opacity: 0;
-  transform: scale(0.85) translateY(20px);
-}
-
-.slide.active h1 {
-  animation: punchText 0.9s ease forwards;
-  animation-delay: 0.4s;
-}
-
-.slide.active p {
-  animation: punchText 0.9s ease forwards;
-  animation-delay: 0.6s;
-}
-
-/* ================= METALLIC LOGO TEXT ================= */
-.slide h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 12px;
-
-  background: linear-gradient(
-    180deg,
-    #f5f7fa,
-    #cfd4da,
-    #9aa0a6,
-    #e6e9ed,
-    #ffffff
-  );
-
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  text-shadow:
-    0 3px 6px rgba(0,0,0,0.7),
-    0 10px 24px rgba(0,0,0,0.6);
-}
-
-.slide p {
-  font-size: 18px;
-  font-weight: 500;
-  color: #e0e3e7;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.55);
-}
-
-/* ================= ANIMATIONS ================= */
-@keyframes punchText {
-  from { opacity: 0; transform: scale(0.85) translateY(20px); }
-  to   { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-@keyframes lightBright {
-  from { opacity: 0.25; box-shadow: 0 0 6px rgba(255,255,255,0.25); }
-  to   { opacity: 1; box-shadow: 0 0 60px rgba(255,255,255,0.9); }
-}
-
-@keyframes darkFade {
-  to { opacity: 0; visibility: hidden; }
-}
-
-@keyframes curtainLeft {
-  to { transform: translateX(-100%); }
-}
-
-@keyframes curtainRight {
-  to { transform: translateX(100%); }
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  .tube-light { height: 170px; }
-  .slide h1 { font-size: 30px; }
-  .slide p { font-size: 16px; }
-}
-
-/* ================= WHAT WE DO SECTION ================= */
-.section.light {
-  background: #ffffff;
-}
-
-.section.light h2 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
-}
-
-.section.light p {
-  font-size: 16px;
-  color: #374151;
-  line-height: 1.6;
-  max-width: 900px;
-}
-
-.section.light strong {
-  display: block;
-  margin-top: 10px;
-  font-weight: 600;
-  color: #111827;
-}
-
-/* ================= SERVICES GRID ================= */
-.services-grid {
-  margin-top: 40px;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-}
-/* SERVICES */
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 22px;
-}
-
-.service-card {
-  background: #FFFFFF;
-  color: #2E2E2E;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-}
-
-/* INDUSTRIES */
-.industry-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.industry-grid span {
-  background: #1F6FB2;
-  color: #FFFFFF;
-  padding: 12px 20px;
-  border-radius: 30px;
-}
-
-/* WHY */
-.why-list {
-  max-width: 700px;
-  margin: auto;
-}
-
-.why-list li {
-  margin-bottom: 10px;
-}
-
-/* CTA */
-.cta {
-  background: #2E2E2E;
-  color: #FFFFFF;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  padding: 70px 0;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
-/* FOOTER */
-.footer {
-  background: #FFFFFF;
-  border-top: 1px solid #e5e7eb;
-  padding: 20px 0;
+.hero-content h1 {
+  font-size: 3em;
 }
 
-.footer-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.hero-content p {
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 
-.footer img {
-  height: 40px;
+.hero-content .btn {
+  margin: 10px;
 }
 
-/* RESPONSIVE */
+.about-intro .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .nav {
-    display: none;
-  }
-
-  .services-grid {
+  .about-intro .grid {
     grid-template-columns: 1fr;
   }
 }
