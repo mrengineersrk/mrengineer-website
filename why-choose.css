@@ -1,0 +1,14 @@
+.hero {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5em;
+}
+
+.section img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin: 20px auto;
+}
