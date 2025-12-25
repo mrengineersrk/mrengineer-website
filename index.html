@@ -1,206 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MR. ENGINEER | Smart Engineering Solutions</title>
-
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="css/home.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mr. Engineer - Home</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
-
-<!-- ================= HEADER ================= -->
-<header class="header">
-  <div class="container header-flex">
-    <img src="logo.png" class="logo" alt="MR Engineer Logo">
-    <nav class="nav">
-      <a href="#">Home</a>
-      <a href="#">About</a>
-      <a href="#">Services</a>
-      <a href="#">Industries</a>
-      <a href="#">Contact</a>
+  <header>
+    <img src="images/logo.png" alt="MR. ENGINEER – Smart Engineering. Reliable Solutions.">
+    <button class="menu-toggle">☰</button>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries We Serve</a></li>
+        <li><a href="why-choose.html">Why Choose Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
     </nav>
-  </div>
-</header>
-
-<!-- ================= HERO ================= -->
-<section class="hero hero-slider">
-
-  <!-- DARK INTRO SCREEN -->
-  <div class="intro-dark"></div>
-
-  <!-- CURTAIN REVEAL -->
-  <div class="curtain left"></div>
-  <div class="curtain right"></div>
-
-  <!-- LEFT CONTROL -->
-  <div class="light-control left">
-
-    <!-- INDUSTRIAL 3D BUTTON -->
-    <div class="industrial-button" onclick="prevSlide()">
-      <span class="btn-core"></span>
-    </div>
-
-    <!-- VERTICAL TUBE LIGHT -->
-    <div class="tube-light"></div>
-
-  </div>
-
-  <!-- RIGHT CONTROL -->
-  <div class="light-control right">
-
-    <!-- INDUSTRIAL 3D BUTTON -->
-    <div class="industrial-button" onclick="nextSlide()">
-      <span class="btn-core"></span>
-    </div>
-
-    <!-- VERTICAL TUBE LIGHT -->
-    <div class="tube-light"></div>
-
-  </div>
-
-  <!-- SLIDES (FULL SCREEN) -->
-  <div class="slides">
-
-    <div class="slide active">
-      <h1>Smart Engineering. Reliable Solutions.</h1>
-      <p>Complete Engineering Services for Industrial & Commercial Needs</p>
-    </div>
-
-    <div class="slide">
-      <h1>Plant Setup & Commissioning</h1>
-      <p>End-to-end industrial plant solutions.</p>
-    </div>
-
-    <div class="slide">
-      <h1>Machinery Installation & Maintenance</h1>
-      <p>Safe, reliable and performance-driven services.</p>
-    </div>
-
-    <div class="slide">
-      <h1>Your One Engineering Partner</h1>
-      <p>We work as your extended engineering team.</p>
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= WHAT WE DO ================= -->
-<section class="section light">
-  <div class="container">
-    <h2>One-Stop Engineering Solutions Provider</h2>
-    <p>
-      At MR. ENGINEER, we handle complete engineering requirements under one roof.
-      We support industries with planning, execution, maintenance, and technical problem-solving—so you get smooth
-      operations without coordination headaches.
-    </p>
-    <strong>We work as your extended engineering team.</strong>
-  </div>
-</section>
-
-<!-- ================= SERVICES ================= -->
-<section class="section dark">
-  <div class="container">
-    <h2>Our Engineering Services</h2>
-
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Plant Setup & Commissioning</h3>
-        <p>Planning, layout, installation coordination, testing, and commissioning of industrial plants.</p>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="slide" style="background-image: url('images/home/hero1.png');"></div>
+      <div class="slide" style="background-image: url('images/home/hero2.png');"></div>
+      <div class="slide" style="background-image: url('images/home/hero3.png');"></div>
+      <div class="slide" style="background-image: url('images/home/hero4.png');"></div>
+      <div class="hero-content">
+        <h1>Complete Engineering Solutions for Industrial & Commercial Needs</h1>
+        <p>From plant setup and machinery installation to maintenance and troubleshooting — we deliver end-to-end engineering services with precision and reliability.</p>
+        <a href="contact.html" class="btn">Get a Quote</a>
+        <a href="contact.html" class="btn">Contact Us</a>
       </div>
-
-      <div class="service-card">
-        <h3>Machinery Installation & Maintenance</h3>
-        <p>Machine installation, preventive maintenance, breakdown handling, and performance improvement.</p>
+    </section>
+    <section class="section about-intro">
+      <h2>About Mr. Engineer (Short Intro Section – 3-column layout with text and icon)</h2>
+      <div class="grid">
+        <p>Mr. Engineer is a one-stop engineering solution provider delivering reliable, efficient, and cost-effective services for industrial and commercial projects.</p>
+        <p>We bridge the gap between skilled engineers, technicians, and industries by offering complete project handling under one roof.</p>
+        <p>With a strong technical foundation and hands-on industry experience, we ensure every project is executed with accuracy, safety, and quality.</p>
       </div>
-
-      <div class="service-card">
-        <h3>Industrial & Interior Layout Solutions</h3>
-        <p>Optimized layouts focusing on safety, productivity, and efficient space utilization.</p>
+      <img src="images/home/about-intro.png" alt="Industrial engineers team">
+    </section>
+    <section class="section core-services">
+      <h2>Our Core Services (Grid of 5 cards, each with icon, title, bullet points, and illustrative image)</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="images/home/service-plant.png" alt="Industrial & Plant Engineering">
+          <h3>🏠 Industrial & Plant Engineering</h3>
+          <ul>
+            <li>Plant setup & commissioning</li>
+            <li>Equipment installation & alignment</li>
+            <li>Production line shifting & modification</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="images/home/service-machinery.png" alt="Machinery Installation & Maintenance">
+          <h3>🏠 Machinery Installation & Maintenance</h3>
+          <ul>
+            <li>Mechanical installation</li>
+            <li>Preventive & breakdown maintenance</li>
+            <li>AMC (Annual Maintenance Contracts)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="images/home/service-piping.png" alt="Piping & Fabrication Works">
+          <h3>Piping & Fabrication Works</h3>
+          <ul>
+            <li>MS / SS piping works</li>
+            <li>Chemical & industrial pipeline installation</li>
+            <li>Structural fabrication</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="images/home/service-layout.png" alt="Interior & Industrial Layout Solutions">
+          <h3>Interior & Industrial Layout Solutions</h3>
+          <ul>
+            <li>Factory layout planning</li>
+            <li>Space optimization</li>
+            <li>Utility line routing</li>
+          </ul>
+        </div>
+        <div class="card">
+          <img src="images/home/service-troubleshoot.png" alt="Engineering Troubleshooting & Support">
+          <h3>Engineering Troubleshooting & Support</h3>
+          <ul>
+            <li>Root cause analysis</li>
+            <li>Process improvement solutions</li>
+            <li>On-site technical support</li>
+          </ul>
+        </div>
       </div>
-
-      <div class="service-card">
-        <h3>Engineering Troubleshooting</h3>
-        <p>Fast and reliable solutions for mechanical, electrical, and industrial challenges.</p>
+    </section>
+    <section class="section industries">
+      <h2>Industries We Serve (Horizontal scroll or grid with icons/images)</h2>
+      <div class="grid">
+        <p>Chemical & Pharmaceutical Plants</p>
+        <p>Manufacturing Units</p>
+        <p>Warehouses & Industrial Sheds</p>
+        <p>Commercial Buildings</p>
+        <p>Small & Medium Industries (SMEs)</p>
       </div>
-
-      <div class="service-card">
-        <h3>Annual Maintenance & Technical Support</h3>
-        <p>AMC services to reduce downtime and ensure long-term system reliability.</p>
-      </div>
-    </div>
-
-    <div class="center">
-      <a href="#" class="btn primary">View All Services</a>
-    </div>
-  </div>
-</section>
-
-<!-- ================= ABOUT ================= -->
-<section class="section light">
-  <div class="container">
-    <h2>About MR. ENGINEER</h2>
-    <p>
-      MR. ENGINEER is a professional engineering solutions company focused on solving practical, on-site engineering challenges.
-      With skilled engineers and strong industry exposure, we deliver cost-effective, timely, and reliable solutions.
-    </p>
-    <p><strong>We believe engineering should be smart, safe, and dependable.</strong></p>
-    <a href="#" class="btn outline">Read More About Us</a>
-  </div>
-</section>
-
-<!-- ================= INDUSTRIES ================= -->
-<section class="section">
-  <div class="container">
-    <h2>Industries We Serve</h2>
-    <div class="industry-grid">
-      <span>Manufacturing & Industrial Plants</span>
-      <span>Commercial Buildings & Offices</span>
-      <span>Workshops & Warehouses</span>
-      <span>Infrastructure & Utility Projects</span>
-      <span>MSMEs & Large Enterprises</span>
-    </div>
-  </div>
-</section>
-
-<!-- ================= WHY CHOOSE ================= -->
-<section class="section light">
-  <div class="container">
-    <h2>Why Choose MR. ENGINEER</h2>
-    <ul class="why-list">
-      <li>Complete engineering solutions under one roof</li>
-      <li>Experienced & skilled engineering professionals</li>
-      <li>Practical and customized solutions</li>
-      <li>Strong focus on safety & quality</li>
-      <li>Transparent and cost-effective pricing</li>
-      <li>On-time execution with full responsibility</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ================= CTA ================= -->
-<section class="cta">
-  <div class="container">
-    <h2>Let’s Build Reliable Engineering Solutions Together</h2>
-    <p>📞 9004624958 | 📧 mrengineer245@gmail.com</p>
-    <p>📍 Bhiwandi, Mumbai – 421311</p>
-    <a href="#" class="btn primary">Contact Us Today</a>
-  </div>
-</section>
-
-<!-- ================= FOOTER ================= -->
-<footer class="footer">
-  <div class="container footer-flex">
-    <img src="logo.png" alt="MR Engineer Logo">
-    <p>© 2025 MR. ENGINEER. All Rights Reserved.</p>
-  </div>
-</footer>
-<script src="hero-slider.js"></script>
-
+    </section>
+    <section class="section why-choose">
+      <h2>Why Choose Mr. Engineer? (Bullet list with checkmarks)</h2>
+      <ul>
+        <li>✓ One-Stop Engineering Solution</li>
+        <li>✓ Experienced Engineers & Skilled Technicians</li>
+        <li>✓ Cost-Effective & Transparent Pricing</li>
+        <li>✓ On-Time Project Delivery</li>
+        <li>✓ Safety & Quality Focused</li>
+        <li>✓ Practical, On-Ground Experience</li>
+      </ul>
+    </section>
+    <section class="section how-work">
+      <h2>How We Work (Numbered steps with icons)</h2>
+      <ol>
+        <li>Understand Your Requirement</li>
+        <li>Site Visit & Technical Assessment</li>
+        <li>Solution Planning & Quotation</li>
+        <li>Execution & Project Management</li>
+        <li>Final Handover & Support</li>
+      </ol>
+    </section>
+    <section class="section cta">
+      <h2>Final Call to Action Section</h2>
+      <p>Need reliable engineering support for your project?</p>
+      <p>Let Mr. Engineer handle it — professionally and efficiently.</p>
+      <p>📞 Call: 9004624958</p>
+      <p>📧 Email: mrengineer245@gmail.com</p>
+      <p>📍 Location: Bhiwandi, Mumbai – 421311</p>
+      <a href="contact.html" class="btn">Get a Quote</a>
+    </section>
+  </main>
+  <footer class="footer">
+    <p>© 2025 Mr. Engineer</p>
+    <p>Smart Engineering. Reliable Solutions.</p>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="industries.html">Industries We Serve</a></li>
+        <li><a href="why-choose.html">Why Choose Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>
