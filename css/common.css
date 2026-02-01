@@ -42,7 +42,7 @@ ul {
 }
 
 /* =====================================================
-   HEADER – WHITE ANGLED STRIP (MAIN REQUIREMENT)
+   HEADER – WHITE STRIP WITH DOWNWARD ANGLE (FIXED)
 ===================================================== */
 .site-header {
   position: sticky;
@@ -50,13 +50,12 @@ ul {
   z-index: 1000;
   background: #ffffff;
 
-  /* ANGLED / STEPPED SHAPE */
+  /* ✅ CORRECT SHAPE (DOWNWARD RIGHT CUT) */
   clip-path: polygon(
     0 0,
     100% 0,
-    100% 62%,
-    78% 62%,
-    72% 100%,
+    100% 80%,
+    82% 100%,
     0 100%
   );
 
@@ -64,15 +63,14 @@ ul {
 }
 
 .header-flex {
-  min-height: 95px;          /* Taller left side */
+  min-height: 96px;          /* strong left height */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 
 /* =====================================================
-   LOGO (IMAGE ONLY – LEFT HEAVY)
+   LOGO
 ===================================================== */
 .logo-image img {
   height: 56px;
@@ -80,11 +78,11 @@ ul {
 }
 
 /* =====================================================
-   NAVIGATION (RIGHT SLIM)
+   NAVIGATION
 ===================================================== */
 .nav ul {
   display: flex;
-  gap: 28px;
+  gap: 26px;
 }
 
 .nav a {
@@ -111,7 +109,7 @@ ul {
 }
 
 /* =====================================================
-   HEADER ACTIONS (CTA + PHONE)
+   HEADER ACTIONS
 ===================================================== */
 .header-actions {
   display: flex;
@@ -143,22 +141,8 @@ ul {
   transform: translateY(-1px);
 }
 
-.btn-secondary {
-  border: 2px solid #0f6cb2;
-  color: #0f6cb2;
-  padding: 10px 18px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.btn-secondary:hover {
-  background: #0f6cb2;
-  color: #ffffff;
-}
-
 /* =====================================================
-   MOBILE MENU TOGGLE
+   MOBILE MENU
 ===================================================== */
 .menu-toggle {
   display: none;
@@ -209,17 +193,17 @@ ul {
 }
 
 /* =====================================================
-   RESPONSIVE (VERY IMPORTANT)
+   RESPONSIVE (IMPORTANT)
 ===================================================== */
 @media (max-width: 1024px) {
   .nav ul {
-    gap: 20px;
+    gap: 18px;
   }
 }
 
 @media (max-width: 768px) {
 
-  /* Disable angled strip on mobile */
+  /* Disable angle on mobile */
   .site-header {
     clip-path: none;
   }
