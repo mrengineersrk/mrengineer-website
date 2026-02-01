@@ -42,63 +42,40 @@ ul {
 }
 
 /* =====================================================
-   HEADER (BASE – RECTANGLE)
+   HEADER (ONE STRIP – REAL HEIGHT)
 ===================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #ffffff;
-  height: 96px;               /* Tall logo side */
+
+  height: 110px; /* ONE real height */
 }
 
 /* Header inner layout */
 .header-flex {
-  height: 96px;
+  height: 110px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 /* =====================================================
-   HEADER SEAM (EXACT LIKE IMAGE)
-===================================================== */
-.site-header::after {
-  content: "";
-  position: absolute;
-  bottom: -28px;              /* Push seam into hero */
-  right: 0;
-
-  width: 46%;                 /* Only right side */
-  height: 28px;
-
-  background: #ffffff;
-
-  /* Flat → step → gentle downward slope */
-  clip-path: polygon(
-    0 0,
-    86% 0,
-    100% 100%,
-    0 100%
-  );
-
-  z-index: 1001;
-}
-
-/* =====================================================
-   LOGO
+   LOGO (LEFT LOOKS TALLER)
 ===================================================== */
 .logo-image img {
-  height: 56px;
+  height: 74px; /* Increased logo size */
   width: auto;
 }
 
 /* =====================================================
-   NAVIGATION
+   NAVIGATION (RIGHT LOOKS SHORTER VISUALLY)
 ===================================================== */
 .nav ul {
   display: flex;
-  gap: 26px;
+  gap: 28px;
 }
 
 .nav a {
@@ -109,6 +86,7 @@ ul {
   padding: 4px 0;
 }
 
+/* hover underline */
 .nav a::after {
   content: "";
   position: absolute;
@@ -158,6 +136,38 @@ ul {
 }
 
 /* =====================================================
+   🔥 HEADER SEAM (MAKES NAV SIDE LOOK SHORTER)
+===================================================== */
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -34px; /* seam overlaps hero */
+  right: 0;
+
+  width: 48%;
+  height: 34px;
+
+  background: #ffffff;
+
+  /* flat → gentle downward slope */
+  clip-path: polygon(
+    0 0,
+    82% 0,
+    100% 100%,
+    0 100%
+  );
+
+  z-index: 1001;
+}
+
+/* =====================================================
+   HERO OFFSET (MANDATORY)
+===================================================== */
+.hero {
+  margin-top: 34px; /* SAME as seam height */
+}
+
+/* =====================================================
    MOBILE MENU
 ===================================================== */
 .menu-toggle {
@@ -172,13 +182,6 @@ ul {
   height: 3px;
   background: #0f6cb2;
   border-radius: 3px;
-}
-
-/* =====================================================
-   HERO OFFSET (MANDATORY FOR SEAM VISIBILITY)
-===================================================== */
-.hero {
-  margin-top: 28px;   /* SAME as seam height */
 }
 
 /* =====================================================
@@ -220,29 +223,30 @@ ul {
 ===================================================== */
 @media (max-width: 1024px) {
   .nav ul {
-    gap: 18px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
-
-  .site-header {
-    height: 72px;
-  }
-
-  .header-flex {
-    height: 72px;
-  }
 
   /* Remove seam on mobile */
   .site-header::after {
     display: none;
   }
 
+  .site-header,
+  .header-flex {
+    height: 80px;
+  }
+
+  .logo-image img {
+    height: 52px;
+  }
+
   .nav {
     display: none;
     position: absolute;
-    top: 72px;
+    top: 80px;
     left: 0;
     width: 100%;
     background: #ffffff;
