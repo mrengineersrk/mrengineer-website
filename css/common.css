@@ -41,38 +41,47 @@ ul {
   padding: 0 20px;
 }
 
-/* ================= HEADER BASE ================= */
+/* ================= HEADER ================= */
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
   background: #ffffff;
-
-  /* MAIN STRIP SHAPE (THIS IS THE KEY) */
-  clip-path: polygon(
-    0 0,        /* top-left */
-    100% 0,     /* top-right */
-    100% 72%,   /* right down */
-    78% 72%,    /* step inward */
-    72% 100%,   /* diagonal down */
-    0 100%      /* bottom-left */
-  );
-
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+  height: 96px;              /* left side height */
 }
 
-/* ================= HEADER LAYOUT ================= */
+/* HEADER CONTENT */
 .header-flex {
-  min-height: 96px;            /* Taller on logo side */
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
+/* ================= DIAGONAL SEAM (KEY FIX) ================= */
+.site-header::after {
+  content: "";
+  position: absolute;
+  bottom: -34px;            /* pushes seam into hero */
+  right: 0;
+  width: 45%;
+  height: 34px;
+  background: #ffffff;
+
+  /* diagonal cut */
+  clip-path: polygon(
+    12% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  z-index: 1000;
+}
+
 /* ================= LOGO ================= */
 .logo-image img {
   height: 56px;
-  width: auto;
 }
 
 /* ================= NAV ================= */
@@ -85,120 +94,25 @@ ul {
   font-size: 15px;
   font-weight: 500;
   color: #444;
-  position: relative;
-  padding: 4px 0;
 }
 
-/* underline hover like modern platforms */
-.nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: #0f6cb2;
-  transition: width 0.3s ease;
-}
-
-.nav a:hover::after {
-  width: 100%;
-}
-
-/* ================= HEADER ACTIONS ================= */
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.header-actions .phone {
-  font-size: 14px;
-  color: #666;
-  font-weight: 500;
-}
-
-/* ================= BUTTON ================= */
+/* ================= CTA ================= */
 .btn-primary {
   background: #0f6cb2;
   color: #fff;
   padding: 10px 18px;
   border-radius: 6px;
-  font-size: 14px;
   font-weight: 600;
-  transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.btn-primary:hover {
-  background: #0b4f86;
-  transform: translateY(-1px);
-}
-
-/* ================= MOBILE MENU ================= */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 26px;
-  height: 3px;
-  background: #0f6cb2;
-  border-radius: 3px;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-  .nav ul {
-    gap: 18px;
-  }
-}
-
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
-
-  /* REMOVE STRIP SHAPE ON MOBILE */
   .site-header {
-    clip-path: none;
+    height: 72px;
   }
 
-  .header-flex {
-    min-height: 72px;
-  }
-
-  .nav {
-    display: none;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
-  }
-
-  .nav.active {
-    display: block;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    padding: 20px;
-    gap: 16px;
-  }
-
-  .header-actions {
-    display: none;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-}
-
-@media (max-width: 480px) {
-  .logo-image img {
-    height: 48px;
+  .site-header::after {
+    display: none;          /* remove seam on mobile */
   }
 }
 
