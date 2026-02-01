@@ -1,39 +1,122 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Arial, sans-serif;
+/* ===== HEADER STRIP ===== */
+.top-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e6ebf0;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: box-shadow 0.3s ease;
 }
 
-body {
-  background: #f5f7fa;
+.top-header.scrolled {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.header-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* ===== BRAND ===== */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 42px;
+}
+
+.brand-text strong {
+  font-size: 16px;
   color: #1f2d3d;
 }
 
-.container {
-  width: 92%;
-  max-width: 1300px;
-  margin: auto;
+.brand-text span {
+  font-size: 11px;
+  color: #6b7c93;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+/* ===== NAV ===== */
+.main-nav {
+  display: flex;
+  gap: 24px;
 }
 
-.btn-primary {
+.main-nav a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e50;
+}
+
+.main-nav a:hover {
+  color: #1976d2;
+}
+
+/* ===== CTA ===== */
+.header-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.btn-cta {
   background: #1976d2;
   color: #fff;
-  padding: 12px 22px;
+  padding: 8px 18px;
   border-radius: 6px;
+  font-size: 14px;
   font-weight: 600;
 }
 
-.btn-secondary {
-  background: #fff;
-  color: #1976d2;
-  padding: 12px 22px;
-  border-radius: 6px;
-  font-weight: 600;
-  border: 1px solid #d0d7de;
+.phone {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #607d8b;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #1f2d3d;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 900px) {
+  .main-nav {
+    position: absolute;
+    top: 65px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 20px 0;
+    display: none;
+    border-bottom: 1px solid #e6ebf0;
+  }
+
+  .main-nav.active {
+    display: flex;
+  }
+
+  .header-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
 }
