@@ -1,5 +1,5 @@
 /* =====================================================
-   GLOBAL RESET & BASE
+   RESET & BASE
 ===================================================== */
 * {
   margin: 0;
@@ -13,9 +13,9 @@ html {
 
 body {
   font-family: "Poppins", Arial, sans-serif;
+  background: #ffffff;
   color: #222;
   line-height: 1.6;
-  background: #ffffff;
 }
 
 img {
@@ -42,47 +42,45 @@ ul {
 }
 
 /* =====================================================
-   HEADER – STRIPE STYLE (AS PER IMAGE)
+   HEADER – WHITE ANGLED STRIP (MAIN REQUIREMENT)
 ===================================================== */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
   background: #ffffff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
-}
 
-/* Blue curved stripe on left */
-.site-header::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 360px;
-  height: 100%;
-  background: linear-gradient(135deg, #0f6cb2, #1f87d6);
-  border-bottom-right-radius: 140px;
-  z-index: -1;
+  /* ANGLED / STEPPED SHAPE */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 62%,
+    78% 62%,
+    72% 100%,
+    0 100%
+  );
+
+  box-shadow: 0 3px 14px rgba(0,0,0,0.08);
 }
 
 .header-flex {
+  min-height: 95px;          /* Taller left side */
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 84px;
   position: relative;
 }
 
 /* =====================================================
-   LOGO (IMAGE ONLY)
+   LOGO (IMAGE ONLY – LEFT HEAVY)
 ===================================================== */
 .logo-image img {
-  height: 54px; /* adjust if needed */
+  height: 56px;
   width: auto;
 }
 
 /* =====================================================
-   NAVIGATION
+   NAVIGATION (RIGHT SLIM)
 ===================================================== */
 .nav ul {
   display: flex;
@@ -92,9 +90,9 @@ ul {
 .nav a {
   font-size: 15px;
   font-weight: 500;
-  color: #333;
+  color: #444;
   position: relative;
-  padding: 5px 0;
+  padding: 4px 0;
 }
 
 .nav a::after {
@@ -123,8 +121,8 @@ ul {
 
 .header-actions .phone {
   font-size: 14px;
+  color: #555;
   font-weight: 500;
-  color: #333;
 }
 
 /* =====================================================
@@ -152,7 +150,6 @@ ul {
   border-radius: 6px;
   font-size: 14px;
   font-weight: 600;
-  transition: all 0.3s ease;
 }
 
 .btn-secondary:hover {
@@ -212,31 +209,33 @@ ul {
 }
 
 /* =====================================================
-   RESPONSIVE – TABLET & MOBILE
+   RESPONSIVE (VERY IMPORTANT)
 ===================================================== */
 @media (max-width: 1024px) {
   .nav ul {
-    gap: 18px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
 
-  /* Reduce stripe width */
-  .site-header::before {
-    width: 220px;
-    border-bottom-right-radius: 90px;
+  /* Disable angled strip on mobile */
+  .site-header {
+    clip-path: none;
   }
 
-  /* Hide desktop nav */
+  .header-flex {
+    min-height: 72px;
+  }
+
   .nav {
     display: none;
     position: absolute;
-    top: 84px;
+    top: 72px;
     left: 0;
     width: 100%;
     background: #ffffff;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
   }
 
   .nav.active {
@@ -260,52 +259,6 @@ ul {
 
 @media (max-width: 480px) {
   .logo-image img {
-    height: 46px;
-  }
-}
-
-
-/* ===== FOOTER ===== */
-.site-footer {
-  background: #0f3554;
-  color: #fff;
-  padding: 50px 0 20px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-  gap: 30px;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  font-size: 13px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-  .nav {
-    display: none;
-    width: 100%;
-    background: #fff;
-  }
-
-  .nav.active {
-    display: block;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    padding: 20px;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .header-cta {
-    display: none;
+    height: 48px;
   }
 }
