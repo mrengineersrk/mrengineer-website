@@ -1,6 +1,6 @@
-/* ===============================
-   GLOBAL RESET & BASE
-================================ */
+/* =====================================================
+   GLOBAL RESET
+===================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -12,16 +12,16 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #1f2937;
   background-color: #ffffff;
 }
 
-/* ===============================
-   CONTAINER & LAYOUT
-================================ */
+/* =====================================================
+   CONTAINERS & LAYOUT
+===================================================== */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -34,9 +34,9 @@ body {
   margin: 0 auto;
 }
 
-/* ===============================
+/* =====================================================
    TYPOGRAPHY
-================================ */
+===================================================== */
 h1, h2, h3, h4, h5, h6 {
   color: #0f3554;
   font-weight: 700;
@@ -54,19 +54,17 @@ p {
 }
 
 .section-title {
-  text-align: center;
   margin-bottom: 12px;
 }
 
 .section-subtitle {
-  text-align: center;
   color: #6b7280;
   margin-bottom: 40px;
 }
 
-/* ===============================
+/* =====================================================
    LINKS
-================================ */
+===================================================== */
 a {
   text-decoration: none;
   color: inherit;
@@ -76,9 +74,9 @@ a:hover {
   color: #1f6fb2;
 }
 
-/* ===============================
-   BUTTONS
-================================ */
+/* =====================================================
+   BUTTONS (GLOBAL)
+===================================================== */
 .btn {
   display: inline-block;
   padding: 12px 22px;
@@ -107,11 +105,11 @@ a:hover {
   background: #f59e0b;
 }
 
-/* CTA base (used in header & footer) */
+/* CTA button (used in header/footer) */
 .btn-cta {
   background: #fbbf24;
-  color: #000;
-  padding: 12px 22px;
+  color: #000000;
+  padding: 10px 20px;
   border-radius: 6px;
   font-weight: 600;
   white-space: nowrap;
@@ -122,13 +120,14 @@ a:hover {
   background: #f59e0b;
 }
 
-/* ===============================
-   HEADER BASE (STRUCTURE ONLY)
-================================ */
+/* =====================================================
+   HEADER (GLOBAL)
+===================================================== */
 .site-header {
   background: #ffffff;
   border-bottom: 1px solid #e5e7eb;
   width: 100%;
+  position: relative;
   z-index: 1000;
 }
 
@@ -136,14 +135,19 @@ a:hover {
   max-width: 1300px;
   margin: auto;
   padding: 8px 20px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 
-/* ===============================
-   NAVIGATION BASE
-================================ */
+/* Logo */
+.header-logo img {
+  height: 48px;
+  width: auto;
+}
+
+/* Navigation */
 .header-nav {
   display: flex;
   gap: 26px;
@@ -156,7 +160,7 @@ a:hover {
   position: relative;
 }
 
-/* Hover underline */
+/* Nav underline hover */
 .header-nav a::after {
   content: "";
   position: absolute;
@@ -172,11 +176,15 @@ a:hover {
   width: 100%;
 }
 
-/* ===============================
-   SECTIONS (GENERIC)
-================================ */
+/* =====================================================
+   SECTIONS (GLOBAL WRAPPER)
+===================================================== */
 section {
   padding: 80px 0;
+}
+
+.section-light {
+  background: #f9fafb;
 }
 
 .section-dark {
@@ -184,28 +192,9 @@ section {
   color: #ffffff;
 }
 
-.section-light {
-  background: #f9fafb;
-}
-
-/* ===============================
-   CARDS (Services, Why Choose, etc.)
-================================ */
-.card {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 22px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-}
-
-.card-title {
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-/* ===============================
-   GRID SYSTEM
-================================ */
+/* =====================================================
+   GRID SYSTEM (GLOBAL)
+===================================================== */
 .grid {
   display: grid;
   gap: 24px;
@@ -223,13 +212,33 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
-/* ===============================
-   FOOTER BASE
-================================ */
+.grid-5 {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* =====================================================
+   CARDS (GENERIC)
+===================================================== */
+.card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.card-title {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* =====================================================
+   FOOTER (GLOBAL)
+===================================================== */
 .site-footer {
   background: #0f172a;
   color: #ffffff;
   text-align: center;
+  padding: 60px 0;
 }
 
 .site-footer p {
@@ -237,37 +246,43 @@ section {
 }
 
 .footer-tagline {
-  margin-top: 12px;
+  margin-top: 14px;
   font-weight: 600;
   color: #fbbf24;
 }
 
-/* ===============================
+/* =====================================================
    UTILITIES
-================================ */
+===================================================== */
 .text-center { text-align: center; }
+.text-left { text-align: left; }
 .text-right { text-align: right; }
 
+.mt-10 { margin-top: 10px; }
 .mt-20 { margin-top: 20px; }
 .mt-40 { margin-top: 40px; }
+
+.mb-10 { margin-bottom: 10px; }
 .mb-20 { margin-bottom: 20px; }
 .mb-40 { margin-bottom: 40px; }
 
 .hidden { display: none; }
 
-/* ===============================
-   RESPONSIVE (BASE)
-================================ */
+/* =====================================================
+   RESPONSIVE (GLOBAL)
+===================================================== */
+@media (max-width: 992px) {
+  h1 { font-size: 36px; }
+  h2 { font-size: 30px; }
+}
+
 @media (max-width: 768px) {
-
-  h1 { font-size: 34px; }
-  h2 { font-size: 28px; }
-
-  .header-nav {
-    display: none; /* mobile menu later */
-  }
 
   section {
     padding: 60px 0;
+  }
+
+  .header-nav {
+    display: none; /* mobile menu later */
   }
 }
