@@ -1,51 +1,60 @@
-/* =====================================================
-   HERO SECTION (IMAGE VIA HTML)
-===================================================== */
+/* ================= HERO SECTION ================= */
 .hero {
   position: relative;
-  min-height: 85vh;
-  display: flex;
-  align-items: center;
+  width: 100%;
+  height: 85vh;
   overflow: hidden;
 }
 
-/* IMAGE */
+/* FULL IMAGE */
 .hero-bg {
   position: absolute;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: 0;
-}
-
-/* OVERLAY */
-.hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(15, 35, 55, 0.78);
   z-index: 1;
 }
 
-/* CONTENT */
-.hero-content {
-  position: relative;
+/* DARK OVERLAY */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 35, 55, 0.7);
   z-index: 2;
-  color: #ffffff;
-  max-width: 760px;
 }
 
-.hero-content h1 {
+/* FULL-WIDTH CONTENT WRAPPER */
+.hero-inner {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* CONTENT (LEFT ALIGNED LIKE IMAGE) */
+.hero-content {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   color: #ffffff;
+}
+
+/* TEXT */
+.hero-content h1 {
   font-size: 44px;
   font-weight: 700;
   margin-bottom: 18px;
+  color: #ffffff;
+  max-width: 720px;
 }
 
-.hero-subtext {
+.hero-content p {
+  max-width: 720px;
   color: #e5e7eb;
-  font-size: 16px;
-  line-height: 1.7;
   margin-bottom: 28px;
 }
 
@@ -53,39 +62,33 @@
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-bottom: 30px;
+  margin-bottom: 28px;
 }
 
 /* TRUST STRIP */
 .hero-trust {
   display: flex;
-  flex-wrap: wrap;
   gap: 22px;
+  flex-wrap: wrap;
   font-size: 14px;
   color: #f9fafb;
 }
 
-/* RESPONSIVE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .hero {
-    min-height: 75vh;
+    height: 75vh;
   }
 
   .hero-content h1 {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .hero-actions {
     flex-direction: column;
     align-items: flex-start;
   }
-
-  .hero-trust {
-    font-size: 13px;
-    gap: 14px;
-  }
 }
-
 
 /* ================= INTRO ================= */
 .intro-grid {
