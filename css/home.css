@@ -73,6 +73,12 @@
 }
 
 /* ================= INTRO ================= */
+.intro {
+  background: #ffffff;          /* PURE WHITE */
+  padding: 80px 0;
+}
+
+/* GRID LAYOUT */
 .intro-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -80,15 +86,42 @@
   align-items: center;
 }
 
+/* IMAGE */
 .intro-image img {
   width: 100%;
   border-radius: 10px;
+}
+
+/* TEXT */
+.intro h2 {
+  font-size: 32px;
+  color: #0f3554;
+  margin-bottom: 18px;
+}
+
+.intro p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #374151;
+  margin-bottom: 14px;
 }
 
 .highlight {
   font-weight: 600;
   color: #0f3554;
 }
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .intro {
+    padding: 60px 0;
+  }
+
+  .intro h2 {
+    font-size: 26px;
+  }
+}
+
 /* ================= OUR SERVICES ================= */
 .services {
   background: #f9fafb;
