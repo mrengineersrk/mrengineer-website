@@ -1,65 +1,69 @@
 /* ================= HERO SECTION ================= */
 .hero {
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
 
+  /* KEY LINE: show engineer on right */
+  background-position: right center;
+
+  padding: 70px 0 55px;   /* SHORTER HERO */
   position: relative;
-  padding: 90px 0 70px;   /* controlled height */
 }
 
-/* Light overlay for readability */
+/* LIGHT DARK OVERLAY (not heavy grey) */
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 35, 55, 0.35);
+  background: rgba(15, 35, 55, 0.45);
 }
 
 /* CONTENT */
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 900px;
+  max-width: 760px;     /* keeps text on left */
 }
 
+/* TEXT */
 .hero-content h1 {
-  font-size: 40px;
+  font-size: 38px;
   font-weight: 700;
   color: #ffffff;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 
 .hero-subtext {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #f1f5f9;
-  margin-bottom: 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e5e7eb;
+  margin-bottom: 24px;
 }
 
 /* BUTTONS */
 .hero-actions {
   display: flex;
-  gap: 16px;
-  margin-bottom: 26px;
+  gap: 14px;
+  margin-bottom: 22px;
 }
 
 /* TRUST STRIP */
 .hero-trust {
   display: flex;
+  gap: 18px;
   flex-wrap: wrap;
-  gap: 22px;
-  font-size: 14px;
+  font-size: 13.5px;
   color: #ffffff;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
   .hero {
-    padding: 60px 0 50px;
+    background-position: center;
+    padding: 55px 0 45px;
   }
 
   .hero-content h1 {
-    font-size: 30px;
+    font-size: 28px;
   }
 
   .hero-actions {
@@ -67,7 +71,6 @@
     align-items: flex-start;
   }
 }
-
 
 /* ================= INTRO ================= */
 .intro-grid {
