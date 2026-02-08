@@ -244,10 +244,10 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 120px;
+  top: 220px;                /* 🔥 PUSH BG DOWN */
   width: 100%;
   max-width: 1200px;
-  height: 420px;
+  height: 520px;             /* 🔥 INCREASE HEIGHT */
 
   background-image: url("images/home/industries-bg.png");
   background-size: cover;
@@ -255,6 +255,7 @@
   border-radius: 18px;
   z-index: 1;
 }
+
 
 /* White fade top + bottom */
 .industries-bg::after {
