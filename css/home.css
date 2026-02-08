@@ -234,47 +234,35 @@
 /* ================= INDUSTRIES SECTION ================= */
 .industries-section {
   position: relative;
-  padding: 90px 0 140px;
-  overflow: hidden;
 
-  /* 🔥 BACKGROUND IMAGE – CONTENT ALIGNED */
-  background-image: url("images/home/industries-bg.png");
-  background-repeat: no-repeat;
-  background-position: center 260px; /* 🔥 aligns image behind cards */
-  background-size: 1200px auto;      /* 🔥 same width as content */
+  /* THIS CONTROLS WHERE IMAGE APPEARS */
+  padding: 90px 0 180px;
 
   background-color: #ffffff;
-}
 
-/* Soft fade ONLY at top and bottom (does NOT hide image) */
-.industries-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
+  /* 🔥 BACKGROUND IMAGE */
+  background-image: url("images/home/industries-bg.png");
+  background-repeat: no-repeat;
 
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,1) 0%,
-    rgba(255,255,255,0.0) 30%,
-    rgba(255,255,255,0.0) 70%,
-    rgba(255,255,255,1) 100%
-  );
+  /* 🔥 IMAGE ALIGNED TO CARD AREA */
+  background-position: center calc(90px + 120px);
+  /* 90px = top padding, 120px = header + gap */
+
+  /* 🔥 SAME WIDTH AS CONTENT */
+  background-size: 1200px auto;
 }
 
 /* Container */
 .industries-section .container {
-  position: relative;
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
-  z-index: 2;
 }
 
 /* Header */
 .industries-header {
   text-align: center;
-  margin-bottom: 80px;
+  margin-bottom: 70px;
 }
 
 .industries-header h2 {
@@ -298,12 +286,7 @@
 
 /* Cards */
 .industry-card {
-  background: linear-gradient(
-    180deg,
-    #1f4f7a 0%,
-    #0b2b46 100%
-  );
-
+  background: linear-gradient(180deg, #1f4f7a, #0b2b46);
   padding: 36px 26px;
   border-radius: 16px;
   min-height: 240px;
@@ -312,10 +295,7 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  box-shadow:
-    0 35px 70px rgba(0,0,0,0.45);
-
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 35px 70px rgba(0,0,0,0.45);
 }
 
 /* Text */
@@ -350,7 +330,6 @@
     grid-template-columns: 1fr;
   }
 }
-
 
 /* ================= WHY CHOOSE ================= */
 .why-choose {
