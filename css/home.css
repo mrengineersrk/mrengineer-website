@@ -235,46 +235,25 @@
 .industries-section {
   position: relative;
   padding: 90px 0 140px;
-  background: #ffffff;
   overflow: hidden;
-}
 
-/* ===== Background Image ===== */
-.industries-bg {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 180px;
+  /* 🔥 BACKGROUND IMAGE HERE */
+  background-image: 
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.9) 0%,
+      rgba(255,255,255,0.25) 35%,
+      rgba(255,255,255,0.25) 75%,
+      rgba(255,255,255,0.9) 100%
+    ),
+    url("images/home/industries-bg.png");
 
-  width: 100%;
-  max-width: 1200px;
-  height: 520px;
-
-  background-image: url("images/home/industries-bg.png");
   background-size: cover;
-  background-position: center;
+  background-position: center bottom;
   background-repeat: no-repeat;
-
-  border-radius: 20px;
-  z-index: 0;
 }
 
-/* Light white mist (NOT blocking) */
-.industries-bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.85) 0%,
-    rgba(255,255,255,0.15) 40%,
-    rgba(255,255,255,0.15) 75%,
-    rgba(255,255,255,0.85) 100%
-  );
-  pointer-events: none;
-}
-
-/* ===== Container ===== */
+/* Container */
 .industries-section .container {
   position: relative;
   max-width: 1200px;
@@ -283,10 +262,10 @@
   z-index: 2;
 }
 
-/* ===== Header ===== */
+/* Header */
 .industries-header {
   text-align: center;
-  margin-bottom: 90px;
+  margin-bottom: 80px;
 }
 
 .industries-header h2 {
@@ -301,18 +280,15 @@
   margin-top: 6px;
 }
 
-/* ===== Cards Row ===== */
+/* Cards Row */
 .industries-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 28px;
 }
 
-/* ===== Industry Card (VISIBLE & READABLE) ===== */
+/* Cards */
 .industry-card {
-  position: relative;
-  z-index: 3;
-
   background: linear-gradient(
     180deg,
     #1f4f7a 0%,
@@ -334,7 +310,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Card Text */
+/* Text */
 .industry-card h3 {
   font-size: 18px;
   font-weight: 600;
@@ -356,7 +332,7 @@
     inset 0 1px 0 rgba(255,255,255,0.25);
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 1100px) {
   .industries-row {
     grid-template-columns: repeat(2, 1fr);
@@ -368,6 +344,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 
 /* ================= WHY CHOOSE ================= */
 .why-choose {
