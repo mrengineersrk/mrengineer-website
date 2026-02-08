@@ -233,14 +233,48 @@
 
 /* ================= INDUSTRIES SECTION ================= */
 .industries-section {
-  padding: 90px 0 140px;
-  background: #ffffff;
+  position: relative;
+  padding: 100px 0 160px;
+  overflow: hidden;
+
+  /* 🔥 FULL SIZE BACKGROUND IMAGE */
+  background-image: url("../images/home/industries-bg.png");
+  background-size: cover;          /* 🔥 IMPORTANT */
+  background-position: center;     /* 🔥 IMPORTANT */
+  background-repeat: no-repeat;
+}
+
+/* ===== SOFT WHITE FADE (TOP + BOTTOM) ===== */
+.industries-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.98) 0%,
+    rgba(255,255,255,0.15) 30%,
+    rgba(255,255,255,0.15) 70%,
+    rgba(255,255,255,0.98) 100%
+  );
+
+  z-index: 1;
+}
+
+/* Container stays above background */
+.industries-section .container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
 }
 
 /* Header */
 .industries-header {
   text-align: center;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
 }
 
 .industries-header h2 {
@@ -252,34 +286,11 @@
 .industries-header p {
   font-size: 16px;
   color: #5f6f82;
-}
-
-/* ===== BACKGROUND WRAPPER ===== */
-.industries-bg-wrap {
-  position: relative;
-  padding: 80px 0;
-}
-
-/* 🔥 ACTUAL BACKGROUND IMAGE */
-.industries-bg-wrap::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  background-image: url("../images/home/industries-bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  border-radius: 20px;
-  z-index: 0;
+  margin-top: 6px;
 }
 
 /* Cards row */
 .industries-row {
-  position: relative;
-  z-index: 2;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 28px;
@@ -287,7 +298,12 @@
 
 /* Cards */
 .industry-card {
-  background: linear-gradient(180deg, #1f4f7a, #0b2b46);
+  background: linear-gradient(
+    180deg,
+    #1f4f7a 0%,
+    #0b2b46 100%
+  );
+
   padding: 36px 26px;
   border-radius: 16px;
   min-height: 240px;
@@ -296,7 +312,10 @@
   flex-direction: column;
   justify-content: flex-end;
 
-  box-shadow: 0 35px 70px rgba(0,0,0,0.45);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Text */
@@ -315,7 +334,7 @@
 
 /* Hover */
 .industry-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-8px);
   box-shadow: 0 45px 90px rgba(0,0,0,0.55);
 }
 
