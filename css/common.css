@@ -105,7 +105,7 @@ a:hover {
   background: #f59e0b;
 }
 
-/* CTA button (used in header/footer) */
+/* CTA button */
 .btn-cta {
   background: #fbbf24;
   color: #000000;
@@ -122,14 +122,28 @@ a:hover {
 }
 
 /* =====================================================
-   HEADER (GLOBAL)
+   HEADER (SINGLE LAYER WITH CURVE)
 ===================================================== */
 .site-header {
   background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
   position: sticky;
   top: 0;
   z-index: 999;
+
+  /* CURVE STARTS AFTER LOGO / NAV AREA */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+
+    100% 80%,
+    62% 80%,
+
+    58% 100%,
+    34% 100%,
+    30% 80%,
+
+    0 80%
+  );
 }
 
 /* Main header layout */
@@ -137,7 +151,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 64px;
+  height: 90px;
   gap: 20px;
 }
 
@@ -193,7 +207,7 @@ a:hover {
 }
 
 /* =====================================================
-   SECTIONS (GLOBAL WRAPPER)
+   SECTIONS
 ===================================================== */
 section {
   padding: 80px 0;
@@ -209,31 +223,20 @@ section {
 }
 
 /* =====================================================
-   GRID SYSTEM (GLOBAL)
+   GRID SYSTEM
 ===================================================== */
 .grid {
   display: grid;
   gap: 24px;
 }
 
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.grid-5 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.grid-4 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.grid-5 { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
 /* =====================================================
-   CARDS (GENERIC)
+   CARDS
 ===================================================== */
 .card {
   background: #ffffff;
@@ -248,7 +251,7 @@ section {
 }
 
 /* =====================================================
-   FOOTER (GLOBAL)
+   FOOTER
 ===================================================== */
 .site-footer {
   background: #0f172a;
@@ -285,23 +288,8 @@ section {
 .hidden { display: none; }
 
 /* =====================================================
-   RESPONSIVE (GLOBAL)
+   MOBILE TOGGLE
 ===================================================== */
-@media (max-width: 992px) {
-  h1 { font-size: 36px; }
-  h2 { font-size: 30px; }
-}
-
-@media (max-width: 768px) {
-  section {
-    padding: 60px 0;
-  }
-
-  .header-nav {
-    display: none; /* mobile menu later */
-  }
-}
-/* ================= MOBILE TOGGLE ================= */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -317,7 +305,9 @@ section {
   transition: all 0.3s ease;
 }
 
-/* ================= MOBILE MENU ================= */
+/* =====================================================
+   MOBILE MENU
+===================================================== */
 .mobile-menu {
   display: none;
   background: #ffffff;
@@ -337,8 +327,19 @@ section {
   color: #1f6fb2;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 992px) {
+  h1 { font-size: 36px; }
+  h2 { font-size: 30px; }
+}
+
 @media (max-width: 768px) {
+
+  section {
+    padding: 60px 0;
+  }
 
   .header-nav {
     display: none;
@@ -354,5 +355,10 @@ section {
 
   .mobile-menu.active {
     display: block;
+  }
+
+  /* Flat header on mobile for safety */
+  .site-header {
+    clip-path: none;
   }
 }
