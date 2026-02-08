@@ -113,6 +113,7 @@ a:hover {
   border-radius: 6px;
   font-weight: 600;
   white-space: nowrap;
+  font-size: 14px;
   transition: background 0.25s ease;
 }
 
@@ -123,37 +124,72 @@ a:hover {
 /* =====================================================
    HEADER (GLOBAL)
 ===================================================== */
-
-/* Center nav perfectly */
-.header-nav {
-  flex: 1;
-  justify-content: center;
+.site-header {
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-/* Active nav underline (like reference) */
+/* Main header layout */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  gap: 20px;
+}
+
+/* Logo */
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo img {
+  height: 58px;
+  width: auto;
+}
+
+/* Navigation */
+.header-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.header-nav a {
+  position: relative;
+  font-weight: 600;
+  color: #0f3554;
+  padding: 6px 0;
+}
+
+/* Underline hover + active */
+.header-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 3px;
+  width: 0;
+  background: #1f6fb2;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after,
 .header-nav a.active::after {
   width: 100%;
 }
 
-/* Reduce overall header height */
-.header-container {
-  min-height: 64px;
-}
-
-/* Logo visual balance */
-.header-logo img {
-  height: 58px;
-}
-
-/* CTA button alignment */
-.btn-cta {
-  font-size: 14px;
-}
-
-/* Sticky effect (optional but recommended) */
-.site-header {
-  position: sticky;
-  top: 0;
+/* Header actions */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
 /* =====================================================
@@ -257,7 +293,6 @@ section {
 }
 
 @media (max-width: 768px) {
-
   section {
     padding: 60px 0;
   }
