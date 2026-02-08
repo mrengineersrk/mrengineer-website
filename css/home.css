@@ -351,32 +351,110 @@
   }
 }
 
-/* ================= WHY CHOOSE ================= */
-.why-choose {
-  background: url("../images/why-choose-bg.jpg") center / cover no-repeat;
+/* ================= WHY MR ENGINEER ================= */
+.why-mr-engineer {
   position: relative;
-  color: #ffffff;
+  padding: 100px 0;
+  background-image: url("../images/home/bg-industrial.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
-.why-choose::before {
-  content: "";
+/* Dark overlay */
+.why-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(8, 20, 35, 0.85);
 }
 
-.why-choose .container {
+/* Content */
+.why-mr-engineer .container {
   position: relative;
   z-index: 2;
 }
 
-.why-card {
-  background: rgba(255,255,255,0.08);
-  padding: 22px;
-  border-radius: 8px;
-  font-weight: 600;
+/* Title */
+.section-title {
   text-align: center;
+  font-size: 38px;
+  margin-bottom: 60px;
+  color: #eaf4ff;
 }
+
+.section-title span {
+  color: #6fbaff;
+}
+
+/* Grid layout */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Card style */
+.why-card {
+  width: 100%;
+  max-width: 320px;
+  padding: 35px 28px;
+  text-align: center;
+  border-radius: 16px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.14),
+    rgba(255,255,255,0.04)
+  );
+
+  border: 1px solid rgba(255,255,255,0.18);
+
+  box-shadow:
+    0 25px 50px rgba(0,0,0,0.55),
+    inset 0 0 25px rgba(120,180,255,0.15);
+
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.why-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 35px 70px rgba(0,0,0,0.7);
+}
+
+/* Icon */
+.why-card img {
+  width: 90px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 12px 18px rgba(90,170,255,0.6));
+}
+
+/* Text */
+.why-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 14.5px;
+  color: #d6eaff;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* ================= FOOTER ================= */
 .footer-content img {
