@@ -301,3 +301,58 @@ section {
     display: none; /* mobile menu later */
   }
 }
+/* ================= MOBILE TOGGLE ================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 26px;
+  height: 3px;
+  background: #0f3554;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu {
+  display: none;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  padding: 24px;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 12px 0;
+  font-weight: 600;
+  color: #0f3554;
+}
+
+.mobile-menu a.active {
+  color: #1f6fb2;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .header-nav {
+    display: none;
+  }
+
+  .desktop-only {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+}
