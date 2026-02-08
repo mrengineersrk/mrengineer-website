@@ -231,33 +231,47 @@
 }
 
 
-/* ================= INDUSTRIES HERO ================= */
-.industries-hero {
+/* ================= INDUSTRIES SECTION ================= */
+.industries-section {
   position: relative;
-  padding: 100px 0 120px;
-  background-image: url("images/home/industries-bg.png"); /* YOUR IMAGE */
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+  padding: 90px 0 120px;
   overflow: hidden;
+  background: #fff;
 }
 
-/* Soft white fade like reference */
-.industries-overlay {
+/* Background image locked to content width */
+.industries-bg {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 120px;
+  width: 100%;
+  max-width: 1200px;
+  height: 420px;
+
+  background-image: url("images/home/industries-bg.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+/* White fade top + bottom */
+.industries-bg::after {
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.15) 40%,
+    rgba(255,255,255,0.15) 35%,
     rgba(255,255,255,0.15) 70%,
     rgba(255,255,255,0.95) 100%
   );
-  z-index: 1;
 }
 
-/* Container controls background framing */
-.industries-hero .container {
+/* Container */
+.industries-section .container {
   position: relative;
   max-width: 1200px;
   margin: auto;
@@ -265,56 +279,54 @@
   z-index: 2;
 }
 
-/* ---------- Header ---------- */
+/* Header */
 .industries-header {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 70px;
+  margin-bottom: 80px;
 }
 
 .industries-header h2 {
   font-size: 38px;
   font-weight: 700;
   color: #0f3554;
-  margin-bottom: 10px;
 }
 
 .industries-header p {
   font-size: 16px;
-  color: #5f6f82;
+  color: #6b7c8f;
+  margin-top: 6px;
 }
 
-/* ---------- Cards Grid ---------- */
-.industries-cards {
+/* Cards Row — FORCE 5 IN ONE LINE */
+.industries-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
 }
 
-/* ---------- Card (3D Look) ---------- */
+/* 3D Cards */
 .industry-card {
   background: linear-gradient(180deg, #123b5f, #0b2b46);
   color: #fff;
-  padding: 38px 28px;
+  padding: 36px 26px;
   border-radius: 16px;
-  min-height: 200px;
+  min-height: 230px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   box-shadow:
-    0 25px 45px rgba(0, 0, 0, 0.35),
+    0 28px 55px rgba(0,0,0,0.35),
     inset 0 1px 0 rgba(255,255,255,0.12);
 
-  transform: translateZ(0);
-  transition: all 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .industry-card h3 {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 .industry-card p {
@@ -323,12 +335,25 @@
   opacity: 0.9;
 }
 
-/* ---------- Hover (Premium Lift) ---------- */
+/* Hover lift */
 .industry-card:hover {
   transform: translateY(-10px);
   box-shadow:
-    0 35px 70px rgba(0, 0, 0, 0.45),
+    0 38px 75px rgba(0,0,0,0.45),
     inset 0 1px 0 rgba(255,255,255,0.18);
+}
+
+/* Responsive fix */
+@media (max-width: 1100px) {
+  .industries-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .industries-row {
+    grid-template-columns: 1fr;
+  }
 }
 
 
