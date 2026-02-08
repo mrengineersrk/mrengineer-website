@@ -233,30 +233,8 @@
 
 /* ================= INDUSTRIES SECTION ================= */
 .industries-section {
-  position: relative;
-
-  /* THIS CONTROLS WHERE IMAGE APPEARS */
-  padding: 90px 0 180px;
-
-  background-color: #ffffff;
-
-  /* 🔥 BACKGROUND IMAGE */
-  background-image: url("images/home/industries-bg.png");
-  background-repeat: no-repeat;
-
-  /* 🔥 IMAGE ALIGNED TO CARD AREA */
-  background-position: center calc(90px + 120px);
-  /* 90px = top padding, 120px = header + gap */
-
-  /* 🔥 SAME WIDTH AS CONTENT */
-  background-size: 1200px auto;
-}
-
-/* Container */
-.industries-section .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  padding: 90px 0 140px;
+  background: #ffffff;
 }
 
 /* Header */
@@ -274,11 +252,34 @@
 .industries-header p {
   font-size: 16px;
   color: #5f6f82;
-  margin-top: 6px;
 }
 
-/* Cards Row */
+/* ===== BACKGROUND WRAPPER ===== */
+.industries-bg-wrap {
+  position: relative;
+  padding: 80px 0;
+}
+
+/* 🔥 ACTUAL BACKGROUND IMAGE */
+.industries-bg-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image: url("images/home/industries-bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  border-radius: 20px;
+  z-index: 0;
+}
+
+/* Cards row */
 .industries-row {
+  position: relative;
+  z-index: 2;
+
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 28px;
