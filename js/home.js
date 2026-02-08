@@ -1,19 +1,11 @@
-document.addEventListener('DOMContentLoaded', () => {
-  // Simple fade-in on scroll for service cards
-  const cards = document.querySelectorAll('.service-card');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = 1;
-        entry.target.style.transform = 'translateY(0)';
-      }
-    });
-  }, { threshold: 0.1 });
+document.addEventListener("DOMContentLoaded", function () {
+  const toggle = document.getElementById("menuToggle");
+  const menu = document.getElementById("mobileMenu");
 
-  cards.forEach(card => {
-    card.style.opacity = 0;
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = 'all 0.6s ease';
-    observer.observe(card);
-  });
+  if (toggle && menu) {
+    toggle.addEventListener("click", function () {
+      menu.classList.toggle("active");
+      toggle.classList.toggle("open");
+    });
+  }
 });
